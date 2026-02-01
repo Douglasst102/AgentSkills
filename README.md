@@ -60,8 +60,9 @@ AgentSkills/
 
 ### 7. UI/UX Designer
 - **Arquivo:** `.cursor/agents/uiux-designer.md`
-- **Skill:** `uiux-design`
+- **Skill:** `uiux-design` (integra `interface-design`)
 - **Responsabilidade:** Wireframes, mockups, design system
+- **Comandos:** `/interface-design:init`, `/interface-design:status`, `/interface-design:audit`, `/interface-design:extract`
 
 ### 8. Frontend Developer
 - **Arquivo:** `.cursor/agents/frontend-developer.md`
@@ -118,6 +119,44 @@ Valida os artefatos e completude de uma etapa específica.
 
 ### `/sync-context`
 Sincroniza o contexto compartilhado entre agentes.
+
+### Comandos de Interface Design
+
+O skill `uiux-design` integra os comandos do `interface-design`:
+
+#### `/interface-design:init`
+Inicia o processo de design de interface com princípios de craft e consistência.
+
+**Uso:**
+```
+/interface-design:init
+```
+
+#### `/interface-design:status`
+Mostra o estado atual do design system, incluindo direção, tokens e padrões.
+
+**Uso:**
+```
+/interface-design:status
+```
+
+#### `/interface-design:audit <caminho>`
+Verifica código existente contra o design system para violações de espaçamento, profundidade, cor e padrões.
+
+**Uso:**
+```
+/interface-design:audit <caminho>     # Audita arquivo/diretório específico
+/interface-design:audit                # Audita caminhos UI comuns
+```
+
+#### `/interface-design:extract <caminho>`
+Extrai padrões de design do código existente para criar um arquivo `system.md`.
+
+**Uso:**
+```
+/interface-design:extract              # Extrai de caminhos UI comuns
+/interface-design:extract <caminho>   # Extrai de diretório específico
+```
 
 ## Fluxo de Execução
 

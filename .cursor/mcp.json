@@ -1,0 +1,19 @@
+﻿{
+  "mcpServers": {
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-notion"],
+      "env": {
+        "NOTION_API_KEY": "your-notion-api-key-here"
+      }
+    },
+    "jira": {
+      "url": "https://your-jira-instance.com/mcp",
+      "auth": {
+        "CLIENT_ID": "your-jira-client-id",
+        "CLIENT_SECRET": "your-jira-client-secret",
+        "scopes": ["read", "write"]
+      }
+    }
+  }
+}
