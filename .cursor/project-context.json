@@ -1,0 +1,65 @@
+{
+  "projectId": "",
+  "projectName": "",
+  "stages": {
+    "business": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "processes": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "requirements": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "architecture": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "technical": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "infrastructure": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "design": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "frontend": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "backend": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "security": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
+    "testing": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    }
+  },
+  "metadata": {
+    "createdAt": null,
+    "lastModified": null
+  }
+}
