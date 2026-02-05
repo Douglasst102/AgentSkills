@@ -40,8 +40,8 @@ AgentSkills/
 
 ### 3. Requirements Engineer
 - **Arquivo:** `.cursor/agents/requirements-engineer.md`
-- **Skill:** `requirements-spec`
-- **Responsabilidade:** Especificação de requisitos funcionais e não-funcionais
+- **Skills:** `requirements-spec`, `user-story-decomposition`
+- **Responsabilidade:** Especificação de requisitos funcionais e não-funcionais, decomposição em User Stories "Ready for Dev"
 
 ### 4. Software Architect
 - **Arquivo:** `.cursor/agents/software-architect.md`
@@ -162,7 +162,7 @@ Extrai padrões de design do código existente para criar um arquivo `system.md`
 
 1. **Business Analyst** - Análise de negócios
 2. **Process Analyst** - Mapeamento de processos
-3. **Requirements Engineer** - Especificação de requisitos
+3. **Requirements Engineer** - Especificação de requisitos e criação de User Stories "Ready for Dev"
 4. **Software Architect** - Design de arquitetura
 5. **Technical Analyst** - Especificações técnicas
 6. **DevOps Engineer** - Infraestrutura (paralelo com Technical)
@@ -186,7 +186,7 @@ Cada agente gera artefatos específicos em `outputs/artifacts/{etapa}/`:
 
 - **business/** - Visão do produto, stakeholders, requisitos de negócio
 - **processes/** - Mapeamento de processos, diagramas BPMN
-- **requirements/** - SRS, matriz de rastreabilidade, backlog
+- **requirements/** - SRS, matriz de rastreabilidade, backlog, User Stories "Ready for Dev"
 - **architecture/** - SAD, diagramas C4, ADRs
 - **technical/** - Especificações técnicas, contratos OpenAPI
 - **infrastructure/** - Dockerfiles, manifests K8s, pipelines CI/CD
@@ -231,6 +231,52 @@ Configure as credenciais necessárias no arquivo.
 ## Dependências Entre Etapas
 
 Cada agente verifica automaticamente se suas dependências estão completas antes de iniciar. O contexto compartilhado mantém o estado de cada etapa.
+
+## Skills Disponíveis
+
+### Requirements Specification (`requirements-spec`)
+Especifica requisitos funcionais e não-funcionais, cria SRS, e prioriza requisitos.
+
+### User Story Decomposition (`user-story-decomposition`)
+Decompõe requisitos de alto nível em User Stories "Ready for Dev" com:
+- Critérios de aceitação em formato Gherkin
+- Tarefas técnicas por área (Backend, Frontend, Banco de Dados, Testes)
+- Validação contra princípios INVEST
+- Dependências e notas técnicas
+
+**Referências:**
+- `references/user-story-template.md` - Template completo de User Story
+- `references/gherkin-guide.md` - Guia de sintaxe Gherkin e exemplos
+
+### Business Analysis (`business-analysis`)
+Analisa requisitos de negócio, identifica stakeholders, e cria visão do produto.
+
+### Process Mapping (`process-mapping`)
+Mapeia processos de negócio e cria diagramas BPMN.
+
+### Architecture Design (`architecture-design`)
+Projeta arquitetura do sistema, escolhe tecnologias, e cria diagramas C4.
+
+### Technical Specification (`technical-spec`)
+Cria especificações técnicas detalhadas, contratos de API OpenAPI/Swagger, e modelos de dados.
+
+### DevOps Infrastructure (`devops-infra`)
+Configura infraestrutura, Docker, Kubernetes, e pipelines CI/CD.
+
+### UI/UX Design (`uiux-design`)
+Cria wireframes, mockups, e design system.
+
+### Frontend Development (`frontend-dev`)
+Implementa componentes frontend e otimiza performance.
+
+### Backend Development (`backend-dev`)
+Implementa APIs backend e lógica de negócio.
+
+### Security Audit (`security-audit`)
+Realiza análise de segurança e identifica vulnerabilidades.
+
+### QA Testing (`qa-testing`)
+Cria estratégia de testes, casos de teste, e valida qualidade.
 
 ## Documentação Adicional
 

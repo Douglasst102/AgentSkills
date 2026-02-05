@@ -228,15 +228,116 @@ Não misture abordagens.
 - Especifique propriedades e variantes
 - Inclua exemplos de uso
 - Documente estados e interações (default, hover, active, focus, disabled, loading, error)
+- Inclua especificações de acessibilidade (ARIA, navegação por teclado, screen readers)
+- Documente comportamento em mobile (touch targets, gestos)
+- Especifique feedback visual para ações do usuário
 - **Nunca use elementos de formulário nativos para UI estilizada** — construa componentes customizados
 
 ### 5. Acessibilidade
 
-- Garanta contraste adequado de cores
-- Considere tamanhos de fonte legíveis
-- Documente navegação por teclado
-- Inclua alternativas textuais para imagens
+**Diretrizes WCAG 2.1 AA:**
+- Garanta contraste adequado de cores (4.5:1 para texto normal, 3:1 para texto grande)
+- Use HTML semântico para melhorar compatibilidade com screen readers
+- Forneça texto alternativo para imagens e conteúdo não-textual
+- Garanta navegabilidade por teclado para todos os elementos interativos
+- Teste com várias tecnologias assistivas (NVDA, JAWS, VoiceOver, TalkBack)
+- Use ARIA quando HTML semântico não for suficiente
 - Construa uma hierarquia de contraste de quatro níveis: foreground (primária) → secundária → muted → faint
+- Documente navegação por teclado e ordem de tab
+- Consulte `.cursor/skills/uiux-design/references/accessibility-guide.md` para diretrizes completas
+
+**Checklist de Acessibilidade:**
+- [ ] Contraste de cores verificado (WCAG 2.1 AA)
+- [ ] HTML semântico usado
+- [ ] Textos alternativos para imagens
+- [ ] Navegação por teclado funcional
+- [ ] Indicadores de foco visíveis
+- [ ] Formulários com labels associados
+- [ ] Estados de erro anunciados corretamente
+- [ ] Testado com screen reader
+
+### 6. Performance Optimization
+
+**Core Web Vitals:**
+- Otimize para LCP (Largest Contentful Paint) < 2.5s
+- Minimize FID/INP (First Input Delay / Interaction to Next Paint) < 100ms/200ms
+- Reduza CLS (Cumulative Layout Shift) < 0.1
+- Otimize imagens e assets para minimizar tempos de carregamento
+- Implemente lazy loading para recursos não-críticos
+- Use code splitting para melhorar performance de carregamento inicial
+- Consulte `.cursor/skills/uiux-design/references/performance-guide.md` para diretrizes completas
+
+**Otimizações de Design:**
+- Priorize conteúdo acima da dobra (above-the-fold)
+- Use imagens responsivas com srcset e sizes
+- Considere critical CSS para renderização inicial
+- Minimize número de fontes e pesos
+- Otimize animações (use CSS quando possível)
+
+### 7. Mobile-First Design
+
+**Princípios:**
+- Design para dispositivos móveis primeiro, depois escale para cima
+- Use touch targets adequados (mínimo 44x44px, recomendado 48x48px)
+- Considere thumb zones para posicionamento de elementos importantes
+- Implemente gestos para ações comuns (swipe, pinch-to-zoom)
+- Use breakpoints baseados em conteúdo, não em dispositivos específicos
+- Teste em dispositivos reais, não apenas emuladores
+- Consulte `.cursor/skills/uiux-design/references/mobile-first-guide.md` para diretrizes completas
+
+**Layouts Responsivos:**
+- Use unidades relativas (%, em, rem) ao invés de pixels fixos
+- Implemente CSS Grid e Flexbox para layouts flexíveis
+- Use media queries com min-width (mobile-first)
+- Priorize conteúdo para visualizações mobile
+- Use progressive disclosure para revelar conteúdo conforme necessário
+
+### 8. User Feedback
+
+**Mecanismos de Feedback:**
+- Incorpore feedback claro para ações do usuário
+- Use indicadores de loading para operações assíncronas
+- Forneça mensagens de erro claras e opções de recuperação
+- Implemente feedback de sucesso para ações completadas
+- Use transições suaves para feedback visual
+
+**Estados de Componentes:**
+- Loading: Mostre indicadores durante carregamento
+- Error: Mensagens claras com ações de recuperação
+- Success: Confirmação visual de ações bem-sucedidas
+- Empty: Estados vazios informativos e acionáveis
+- Disabled: Indicação clara de elementos desabilitados
+
+### 9. Information Architecture
+
+**Organização de Conteúdo:**
+- Organize conteúdo logicamente para facilitar acesso fácil
+- Use labeling e categorização claros para navegação
+- Implemente funcionalidade de busca efetiva
+- Crie sitemap para visualizar estrutura geral
+- Considere hierarquia de informação em wireframes
+
+**Navegação:**
+- Crie padrões de navegação intuitivos
+- Use componentes UI familiares para reduzir carga cognitiva
+- Forneça breadcrumbs para contexto de localização
+- Implemente navegação mobile-friendly (hamburger menu, bottom navigation)
+
+### 10. Testing and Iteration
+
+**Estratégias de Teste:**
+- Conduza A/B testing para decisões críticas de design
+- Use heatmaps para analisar comportamento do usuário
+- Analise gravações de sessão para identificar pontos de dor
+- Colete feedback do usuário regularmente
+- Itere continuamente em designs baseado em dados e feedback
+
+**Métricas para Monitorar:**
+- Taxa de conversão
+- Tempo na tarefa
+- Taxa de erro
+- Satisfação do usuário
+- Core Web Vitals
 
 ---
 
@@ -348,8 +449,18 @@ Isso se compõe — cada salvamento torna o trabalho futuro mais rápido e consi
 
 ## Referências
 
+### Craft e Design
 - `.cursor/skills/interface-design/SKILL.md` — fundamentos completos
 - `.cursor/skills/interface-design/references/principles.md` — exemplos de código, valores específicos, dark mode
 - `.cursor/skills/interface-design/references/example.md` — como decisões se traduzem em código
 - `.cursor/skills/interface-design/references/validation.md` — gerenciamento de memória, quando atualizar system.md
 - `references/design-system-guide.md` — templates e exemplos básicos
+
+### Acessibilidade
+- `references/accessibility-guide.md` — diretrizes WCAG 2.1 AA, HTML semântico, ARIA, navegação por teclado
+
+### Mobile-First
+- `references/mobile-first-guide.md` — touch targets, thumb zones, gestos, breakpoints, layouts responsivos
+
+### Performance
+- `references/performance-guide.md` — Core Web Vitals, otimização de imagens, code splitting, lazy loading
