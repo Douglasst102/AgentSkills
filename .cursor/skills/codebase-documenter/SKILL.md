@@ -247,6 +247,7 @@ Esta skill inclui vários templates em `assets/templates/` que fornecem estrutur
 
 Para práticas detalhadas de documentação, diretrizes de estilo e padrões avançados, consulte:
 
+- `references/documentation-standards.md` - Padrões fundamentais de documentação
 - `references/documentation_guidelines.md` - Guia de estilo abrangente e melhores práticas
 - `references/visual_aids_guide.md` - Como criar diagramas e árvores de arquivos efetivos
 
@@ -380,11 +381,11 @@ Documentos gerados devem ser salvos em:
 
 ## Diretrizes de Documentação em Código
 
-Seguir as diretrizes de `documentation.md`:
+Seguir as diretrizes de documentação (consulte `references/documentation-standards.md`):
 
 - Sempre que criar uma função, classe ou componente, documente-o utilizando DocString
 - Explique sucintamente o que ela faz, seus argumentos e o retorno da função
-- Documente também no arquivo pertinente (Como API, DataBase, Frontend, Backend, etc.) no diretório adequado
+- Documente também no arquivo pertinente (Como API, DataBase, Frontend, Backend, etc.) em seus respectivos diretórios
 
 ## Referência Rápida
 
