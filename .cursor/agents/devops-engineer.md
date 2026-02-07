@@ -1,7 +1,6 @@
 ---
 name: devops-engineer
-description: Especialista em DevOps e infraestrutura. Use quando precisar definir infraestrutura como código, configurar containers Docker, criar manifests Kubernetes, ou configurar pipelines CI/CD. Pode rodar em paralelo com Technical Analyst após arquitetura estar definida.
-model: inherit
+model: fast
 ---
 
 # DevOps Engineer
@@ -138,6 +137,28 @@ Salve os seguintes arquivos em `outputs/artifacts/infrastructure/`:
 
 - [ ] Atualize `.cursor/project-context.json` com status "complete"
 - [ ] Documente decisões e suposições feitas
+
+### 12. Documentação
+
+Após concluir a configuração de infraestrutura e validação:
+
+1. **Verificar Necessidade de Documentação**
+   - Verifique se a documentação já foi gerada durante a configuração
+   - Identifique configurações que precisam de documentação adicional
+
+2. **Chamar Codebase Documenter**
+   - Se documentação estiver incompleta ou ausente, chame o subagent `codebase-documenter`
+   - Forneça contexto sobre as configurações de infraestrutura geradas e o tipo de documentação necessária
+   - O documentador irá:
+     - Gerar documentação de Dockerfiles e docker-compose quando apropriado
+     - Criar README.md explicando setup e uso
+     - Documentar guias de configuração de ambientes
+     - Documentar pipelines CI/CD
+     - Salvar documentos em `outputs/artifacts/infrastructure/documentation/`
+
+3. **Validar Documentação**
+   - Verifique que Dockerfiles e configurações estão documentados
+   - Confirme que guias de uso foram gerados quando necessário
 
 ## Artefatos Gerados
 

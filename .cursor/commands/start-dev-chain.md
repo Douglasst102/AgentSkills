@@ -31,7 +31,8 @@ O Agent irá orquestrar automaticamente todos os subagents necessários.
 8. **Frontend Developer** - Implementação frontend
 9. **Backend Developer** - Implementação backend (paralelo com Frontend)
 10. **Security Engineer** - Revisão de segurança
-11. **QA Engineer** - Testes e validação final
+11. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
+12. **QA Engineer** - Testes e validação final
 
 ## Validação
 

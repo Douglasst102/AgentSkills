@@ -6,7 +6,7 @@ Sistema completo de desenvolvimento de software usando agentes especializados no
 
 Este projeto implementa uma cadeia de desenvolvimento de software completa utilizando:
 
-- **Subagents** - 11 agentes especializados em diferentes etapas do desenvolvimento
+- **Subagents** - 12 agentes especializados em diferentes etapas do desenvolvimento
 - **Skills** - Capacidades específicas de cada agente
 - **Commands** - Comandos para orquestração e controle
 - **MCP** - Integrações externas opcionais
@@ -79,7 +79,12 @@ AgentSkills/
 - **Skill:** `security-audit`
 - **Responsabilidade:** Análise de segurança, vulnerabilidades, relatórios
 
-### 11. QA Engineer
+### 11. Codebase Documenter
+- **Arquivo:** `.cursor/agents/codebase-documenter.md`
+- **Skill:** `codebase-documenter`
+- **Responsabilidade:** Documentação de código (DocStrings, comentários, documentação externa), criação de README, API docs e guias de arquitetura
+
+### 12. QA Engineer
 - **Arquivo:** `.cursor/agents/qa-engineer.md`
 - **Skill:** `qa-testing`
 - **Responsabilidade:** Estratégia de testes, casos de teste, validação
@@ -106,6 +111,7 @@ Ativa um agente específico para trabalhar em uma etapa particular.
 - `/activate-agent business-analyst`
 - `/activate-agent software-architect`
 - `/activate-agent security-engineer`
+- `/activate-agent codebase-documenter`
 
 ### `/view-progress`
 Exibe o status atual de todas as etapas da cadeia de desenvolvimento.
@@ -115,7 +121,7 @@ Valida os artefatos e completude de uma etapa específica.
 
 **Etapas disponíveis:**
 - `business`, `processes`, `requirements`, `architecture`, `technical`
-- `infrastructure`, `design`, `frontend`, `backend`, `security`, `testing`
+- `infrastructure`, `design`, `frontend`, `backend`, `security`, `documentation`, `testing`
 
 ### `/sync-context`
 Sincroniza o contexto compartilhado entre agentes.
@@ -170,7 +176,8 @@ Extrai padrões de design do código existente para criar um arquivo `system.md`
 8. **Frontend Developer** - Implementação frontend
 9. **Backend Developer** - Implementação backend (paralelo com Frontend)
 10. **Security Engineer** - Revisão de segurança
-11. **QA Engineer** - Testes e validação final
+11. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
+12. **QA Engineer** - Testes e validação final
 
 ## Contexto Compartilhado
 
@@ -194,6 +201,7 @@ Cada agente gera artefatos específicos em `outputs/artifacts/{etapa}/`:
 - **frontend/** - Código frontend, componentes
 - **backend/** - Código backend, APIs
 - **security/** - Relatórios de segurança, vulnerabilidades
+- **documentation/** - Documentação de código (DocStrings, README, API docs, guias de arquitetura)
 - **testing/** - Estratégia de testes, casos de teste, relatórios
 
 ## Integração MCP
@@ -274,6 +282,9 @@ Implementa APIs backend e lógica de negócio.
 
 ### Security Audit (`security-audit`)
 Realiza análise de segurança e identifica vulnerabilidades.
+
+### Codebase Documentation (`codebase-documenter`)
+Cria documentação inline (DocStrings, comentários) e externa (README, API docs, guias de arquitetura) para código gerado.
 
 ### QA Testing (`qa-testing`)
 Cria estratégia de testes, casos de teste, e valida qualidade.

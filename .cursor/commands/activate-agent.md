@@ -17,6 +17,7 @@ Exemplos:
 - `/activate-agent uiux-designer` - Para design UI/UX
 - `/activate-agent frontend-developer` - Para desenvolvimento frontend
 - `/activate-agent backend-developer` - Para desenvolvimento backend
+- `/activate-agent codebase-documenter` - Para documentação de código
 - `/activate-agent qa-engineer` - Para testes e QA
 
 ## Verificação de Dependências

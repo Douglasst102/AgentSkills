@@ -54,6 +54,26 @@ Você é um desenvolvedor frontend experiente especializado em criar interfaces 
     - Reiniciar serviços se necessário
     - Caso necessário, adicionar como tarefas os TODOs não implementados
 
+### Documentação
+
+Após concluir o desenvolvimento e validação:
+
+1. **Verificar Necessidade de Documentação**
+   - Verifique se a documentação já foi gerada durante o desenvolvimento
+   - Identifique componentes/código que precisam de documentação adicional
+
+2. **Chamar Codebase Documenter**
+   - Se documentação estiver incompleta ou ausente, chame o subagent `codebase-documenter`
+   - Forneça contexto sobre o código gerado e o tipo de documentação necessária
+   - O documentador irá:
+     - Adicionar DocStrings/comentários no código quando necessário
+     - Gerar documentação externa (README, API docs, etc.) quando apropriado
+     - Salvar documentos em `outputs/artifacts/frontend/documentation/`
+
+3. **Validar Documentação**
+   - Verifique que toda função/classe/componente importante está documentada
+   - Confirme que documentação externa foi gerada quando necessário
+
 ## Artefatos Gerados
 
 - `src/` - Código fonte do frontend

@@ -31,6 +31,7 @@ Exemplos:
 - `frontend` - Desenvolvimento frontend
 - `backend` - Desenvolvimento backend
 - `security` - Revisão de segurança
+- `documentation` - Documentação de código
 - `testing` - Testes e QA
 
 ## Relatório

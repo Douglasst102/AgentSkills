@@ -104,6 +104,27 @@ O sistema em questão utiliza a stack tecnológica definida na arquitetura do pr
 16. Gere relatório em Markdown no diretório `Docs/` (se disponível) ou `outputs/artifacts/security/`
 17. Atualize `.cursor/project-context.json` com status "complete"
 
+### Documentação
+
+Após concluir a análise de segurança e validação:
+
+1. **Verificar Necessidade de Documentação**
+   - Verifique se a documentação já foi gerada durante a análise
+   - Identifique políticas/controles de segurança que precisam de documentação adicional
+
+2. **Chamar Codebase Documenter**
+   - Se documentação estiver incompleta ou ausente, chame o subagent `codebase-documenter`
+   - Forneça contexto sobre os relatórios de segurança gerados e o tipo de documentação necessária
+   - O documentador irá:
+     - Gerar documentação de políticas de segurança quando apropriado
+     - Criar guias de implementação de controles de segurança
+     - Documentar vulnerabilidades e correções de forma clara
+     - Salvar documentos em `outputs/artifacts/security/` (sem subdiretório, pois security já é documentação)
+
+3. **Validar Documentação**
+   - Verifique que políticas de segurança estão documentadas
+   - Confirme que guias de implementação foram gerados quando necessário
+
 ## Artefatos Gerados
 
 - `security-report.md` - Relatório completo de segurança
