@@ -25,33 +25,37 @@ Você é um engenheiro de QA experiente especializado em garantir qualidade e co
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/frontend/`, `outputs/artifacts/backend/`, e `outputs/artifacts/requirements/`
-2. Use a skill `qa-testing` para estruturar os testes
-3. Crie estratégia de testes (unitários, integração, E2E)
-4. Gere casos de teste baseados em requisitos
-5. Crie testes automatizados (quando aplicável)
-6. Execute testes manuais e automatizados
-7. Documente bugs encontrados
-8. Valide cobertura de testes
-9. Gere relatório de testes
-10. Salve artefatos em `outputs/artifacts/testing/`
-11. Atualize `.cursor/project-context.json` com status "complete"
+1. Leia os artefatos das etapas anteriores em `outputs/artifacts/frontend/`, `outputs/artifacts/backend/` e `outputs/artifacts/requirements/`
+2. Quando existir, leia as User Stories em `outputs/artifacts/requirements/user-stories-ready-for-dev.md` e use os critérios de aceitação (Gherkin) como base para casos de teste e testes E2E/aceitação
+3. Use a skill `qa-testing` para estruturar os testes
+4. Crie estratégia de testes (unitários, integração, E2E)
+5. Gere casos de teste baseados em requisitos e nos ACs das User Stories
+6. Crie testes automatizados (unitários, integração, E2E quando aplicável), alinhando cenários aos ACs
+7. Execute testes manuais e automatizados; para E2E, execute **no container Playwright** (npm/npx somente dentro do container), conforme a skill qa-testing e `references/playwright-docker.md`
+8. Documente bugs encontrados
+9. Valide cobertura de testes
+10. Gere relatório de testes
+11. Salve artefatos em `outputs/artifacts/testing/`
+12. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
 
 - `test-strategy.md` - Estratégia de testes
-- `test-cases.md` - Casos de teste
+- `test-cases.md` - Casos de teste (derivados dos requisitos e dos ACs das User Stories quando existirem)
 - `test-scripts/` - Scripts de teste automatizados
+- `e2e/` - Specs Playwright quando testes E2E forem criados (ex.: um cenário por AC ou por user story)
 - `test-results.md` - Resultados de testes
 - `bug-reports.md` - Relatório de bugs
 - `test-coverage.md` - Cobertura de testes
+- Relatórios do Playwright (`playwright-report/`, `test-results/`) no projeto após execução no container
 
 ## Validação
 
 Antes de concluir, verifique:
 - [ ] Estratégia de testes criada
-- [ ] Casos de teste gerados
-- [ ] Testes executados
+- [ ] Casos de teste gerados (e, quando houver User Stories, alinhados aos critérios de aceitação)
+- [ ] Testes executados (E2E executados no container Playwright quando aplicável)
+- [ ] Testes E2E/aceitação alinhados aos critérios das User Stories (quando disponíveis)
 - [ ] Bugs documentados
 - [ ] Cobertura de testes validada
 - [ ] Relatório de testes gerado
