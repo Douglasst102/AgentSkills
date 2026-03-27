@@ -44,7 +44,7 @@ Skill para mapeamento completo de processos de negócio e criação de diagramas
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/processes/`:
+Salve os seguintes arquivos em `processes/`:
 - `process-map.md` - Mapeamento completo
 - `critical-processes-matrix.md` - Matriz de processos críticos
 - `process-diagrams/` - Diagramas BPMN

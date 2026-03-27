@@ -138,7 +138,7 @@ Sempre aplique os seguintes princípios:
 
 ## Outputs
 
-Salve o seguinte arquivo em `outputs/artifacts/requirements/`:
+Salve o seguinte arquivo em `requirements/`:
 - `user-stories-ready-for-dev.md` - Documento completo com todas as User Stories detalhadas, organizadas por épicos, incluindo:
   - Personas identificadas
   - Índice de User Stories

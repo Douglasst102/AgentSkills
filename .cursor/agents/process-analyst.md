@@ -26,13 +26,13 @@ Você é um analista de processos experiente especializado em mapear, analisar e
 
 ## Processo de Trabalho
 
-1. Leia os artefatos da etapa de negócios em `outputs/artifacts/business/`
+1. Leia os artefatos da etapa de negócios em `business/`
 2. Use a skill `process-mapping` para estruturar o mapeamento
 3. Identifique processos críticos mencionados na análise de negócios
 4. Mapeie cada processo identificado
 5. Identifique gargalos e oportunidades de melhoria
 6. Crie diagramas BPMN dos processos principais
-7. Salve artefatos em `outputs/artifacts/processes/`
+7. Salve artefatos em `processes/`
 8. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -50,7 +50,7 @@ Antes de concluir, verifique:
 - [ ] Gargalos identificados
 - [ ] Oportunidades de melhoria documentadas
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/processes/`
+- [ ] Todos os artefatos salvos em `processes/`
 
 ## Dependências
 

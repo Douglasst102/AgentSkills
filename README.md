@@ -21,9 +21,21 @@ AgentSkills/
 │   ├── commands/          # Commands de orquestração
 │   ├── project-context.json  # Contexto compartilhado
 │   └── mcp.json          # Configuração MCP (opcional)
-├── outputs/
-│   └── artifacts/         # Artefatos gerados por cada etapa
-└── README.md
+├── business/              # Análise de negócios
+├── processes/             # Mapeamento de processos (BPMN)
+├── requirements/          # Requisitos, SRS, User Stories
+├── architecture/          # SAD, C4, ADRs
+├── technical/             # Especificação técnica, OpenAPI
+├── infrastructure/        # Docker, Kubernetes, CI/CD
+├── design/                # Wireframes, mockups, design system
+├── data/                  # Modelos de dados, ERD
+├── frontend/              # Código e documentação frontend
+├── backend/               # Código e documentação backend
+├── security/              # Relatórios e análise de segurança
+├── testing/               # Estratégia de testes, casos, automação
+├── others_artifacts/      # Demais artefatos do projeto
+├── README.md      
+└── TODOs.md
 ```
 
 ## Agentes Disponíveis
@@ -189,7 +201,7 @@ O arquivo `.cursor/project-context.json` mantém o estado compartilhado entre to
 
 ## Artefatos Gerados
 
-Cada agente gera artefatos específicos em `outputs/artifacts/{etapa}/`:
+Cada agente gera artefatos na raiz do repositório, em pastas nomeadas por etapa:
 
 - **business/** - Visão do produto, stakeholders, requisitos de negócio
 - **processes/** - Mapeamento de processos, diagramas BPMN
@@ -198,11 +210,12 @@ Cada agente gera artefatos específicos em `outputs/artifacts/{etapa}/`:
 - **technical/** - Especificações técnicas, contratos OpenAPI
 - **infrastructure/** - Dockerfiles, manifests K8s, pipelines CI/CD
 - **design/** - Wireframes, mockups, design system
-- **frontend/** - Código frontend, componentes
-- **backend/** - Código backend, APIs
+- **data/** - Modelos de dados, ERD, dicionário de dados
+- **frontend/** - Código frontend, componentes; documentação pode ficar em subpastas (por exemplo `documentation/`)
+- **backend/** - Código backend, APIs; documentação pode ficar em subpastas (por exemplo `documentation/`)
 - **security/** - Relatórios de segurança, vulnerabilidades
-- **documentation/** - Documentação de código (DocStrings, README, API docs, guias de arquitetura)
 - **testing/** - Estratégia de testes, casos de teste, relatórios
+- **others_artifacts/** - Artefatos que não se encaixam nas pastas acima
 
 ## Integração MCP
 

@@ -26,14 +26,14 @@ Você é um analista técnico experiente especializado em criar especificações
 
 ## Processo de Trabalho
 
-1. Leia os artefatos da etapa de arquitetura em `outputs/artifacts/architecture/`
+1. Leia os artefatos da etapa de arquitetura em `architecture/`
 2. Use a skill `technical-spec` para estruturar as especificações
 3. Detalhe especificações técnicas de cada componente
 4. Crie contratos de API completos (OpenAPI/Swagger)
 5. Projete modelos de dados (ERD)
 6. Especifique casos de uso técnicos
 7. Documente integrações entre componentes
-8. Salve artefatos em `outputs/artifacts/technical/`
+8. Salve artefatos em `technical/`
 9. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -53,7 +53,7 @@ Antes de concluir, verifique:
 - [ ] Casos de uso técnicos especificados
 - [ ] Integrações documentadas
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/technical/`
+- [ ] Todos os artefatos salvos em `technical/`
 
 ## Dependências
 

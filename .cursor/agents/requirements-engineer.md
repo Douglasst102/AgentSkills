@@ -27,7 +27,7 @@ Você é um engenheiro de requisitos experiente especializado em transformar nec
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/business/` e `outputs/artifacts/processes/`
+1. Leia os artefatos das etapas anteriores em `business/` e `processes/`
 2. Use a skill `requirements-spec` para estruturar a especificação
 3. Extraia requisitos funcionais dos processos e necessidades de negócio
 4. Identifique requisitos não-funcionais (performance, segurança, escalabilidade)
@@ -37,7 +37,7 @@ Você é um engenheiro de requisitos experiente especializado em transformar nec
 8. Gere backlog priorizado
 9. **Após a arquitetura estar definida**, use a skill `user-story-decomposition` para decompor requisitos em User Stories "Ready for Dev"
 10. Crie User Stories detalhadas com critérios de aceitação em Gherkin e tarefas técnicas por área
-11. Salve artefatos em `outputs/artifacts/requirements/`
+11. Salve artefatos em `requirements/`
 12. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -62,7 +62,7 @@ Antes de concluir, verifique:
 - [ ] Tarefas técnicas identificadas por área (Backend, Frontend, Banco de Dados, Testes)
 - [ ] Dependências entre User Stories documentadas
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/requirements/`
+- [ ] Todos os artefatos salvos em `requirements/`
 
 ## Dependências
 

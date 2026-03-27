@@ -39,8 +39,8 @@ Antes de começar, consulte o checklist completo em `references/docker-compose-g
 
 ### 2. Análise de Requisitos
 
-1. Leia os artefatos da etapa de arquitetura em `outputs/artifacts/architecture/`
-2. Leia as especificações técnicas em `outputs/artifacts/technical/`
+1. Leia os artefatos da etapa de arquitetura em `architecture/`
+2. Leia as especificações técnicas em `technical/`
 3. Analise requisitos de infraestrutura da arquitetura
 4. Identifique a stack tecnológica real do projeto (não assuma tecnologias específicas)
 
@@ -121,7 +121,7 @@ Para cada serviço/componente:
 
 ### 10. Salvamento de Artefatos
 
-Salve os seguintes arquivos em `outputs/artifacts/infrastructure/`:
+Salve os seguintes arquivos em `infrastructure/`:
 
 - [ ] `dockerfiles/` - Dockerfiles para cada serviço
 - [ ] `docker-compose.dev.yml` - Configuração para desenvolvimento
@@ -155,7 +155,7 @@ Após concluir a configuração de infraestrutura e validação:
      - Criar README.md explicando setup e uso
      - Documentar guias de configuração de ambientes
      - Documentar pipelines CI/CD
-     - Salvar documentos em `outputs/artifacts/infrastructure/documentation/`
+     - Salvar documentos em `infrastructure/documentation/`
 
 3. **Validar Documentação**
    - Verifique que Dockerfiles e configurações estão documentados
@@ -191,7 +191,7 @@ Antes de concluir, verifique:
 - [ ] Ambientes definidos
 - [ ] Documentação de uso criada (README.md)
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/infrastructure/`
+- [ ] Todos os artefatos salvos em `infrastructure/`
 
 **Consulte `references/docker-best-practices.md` para checklist completo de boas práticas.**
 

@@ -88,11 +88,11 @@ Use a skill `codebase-documenter` para:
 
 Salvar documentos nos diretórios corretos:
 
-- **Frontend:** `outputs/artifacts/frontend/documentation/`
-- **Backend:** `outputs/artifacts/backend/documentation/`
-- **Infrastructure:** `outputs/artifacts/infrastructure/documentation/`
-- **Design:** `outputs/artifacts/design/` (sem subdiretório)
-- **Security:** `outputs/artifacts/security/` (sem subdiretório)
+- **Frontend:** `frontend/documentation/`
+- **Backend:** `backend/documentation/`
+- **Infrastructure:** `infrastructure/documentation/`
+- **Design:** `design/` (sem subdiretório)
+- **Security:** `security/` (sem subdiretório)
 
 ### 5. Validação
 

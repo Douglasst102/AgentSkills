@@ -25,8 +25,8 @@ Você é um engenheiro de QA experiente especializado em garantir qualidade e co
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/frontend/`, `outputs/artifacts/backend/` e `outputs/artifacts/requirements/`
-2. Quando existir, leia as User Stories em `outputs/artifacts/requirements/user-stories-ready-for-dev.md` e use os critérios de aceitação (Gherkin) como base para casos de teste e testes E2E/aceitação
+1. Leia os artefatos das etapas anteriores em `frontend/`, `backend/` e `requirements/`
+2. Quando existir, leia as User Stories em `requirements/user-stories-ready-for-dev.md` e use os critérios de aceitação (Gherkin) como base para casos de teste e testes E2E/aceitação
 3. Use a skill `qa-testing` para estruturar os testes
 4. Crie estratégia de testes (unitários, integração, E2E)
 5. Gere casos de teste baseados em requisitos e nos ACs das User Stories
@@ -35,7 +35,7 @@ Você é um engenheiro de QA experiente especializado em garantir qualidade e co
 8. Documente bugs encontrados
 9. Valide cobertura de testes
 10. Gere relatório de testes
-11. Salve artefatos em `outputs/artifacts/testing/`
+11. Salve artefatos em `testing/`
 12. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -60,7 +60,7 @@ Antes de concluir, verifique:
 - [ ] Cobertura de testes validada
 - [ ] Relatório de testes gerado
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/testing/`
+- [ ] Todos os artefatos salvos em `testing/`
 
 ## Dependências
 

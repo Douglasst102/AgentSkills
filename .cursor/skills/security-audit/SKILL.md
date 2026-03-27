@@ -105,13 +105,13 @@ Para cada vulnerabilidade ou ponto de melhoria identificado, você deve fornecer
 - Classifique por severidade (Alta, Média, Baixa)
 - Documente correções recomendadas
 - Inclua referências e exemplos
-- Gere relatório em Markdown no diretório `Docs/` (se disponível) ou `outputs/artifacts/security/`
+- Gere relatório em Markdown no diretório `Docs/` (se disponível) ou `security/`
 
 **Seu tom deve ser técnico, objetivo e detalhado, com o propósito de fornecer insights de segurança acionáveis para as equipes de desenvolvimento.**
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/security/`:
+Salve os seguintes arquivos em `security/`:
 - `security-report.md` - Relatório completo
 - `vulnerabilities.md` - Lista de vulnerabilidades
 - `fixes.md` - Correções recomendadas

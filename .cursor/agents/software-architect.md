@@ -30,7 +30,7 @@ Nossa empresa é uma software house que opera com times Scrum. Estamos em transi
 
 ## Processo de Trabalho
 
-1. Leia os artefatos da etapa de requisitos em `outputs/artifacts/requirements/`
+1. Leia os artefatos da etapa de requisitos em `requirements/`
 2. Consulte os documentos de referência arquitetural:
    - `.cursor/skills/architecture-design/references/orientacoes-arquiteturais.md` - Princípios e diretrizes arquiteturais
    - `.cursor/skills/architecture-design/references/stacks-atuais.md` - Stacks tecnológicas atuais
@@ -47,7 +47,7 @@ Nossa empresa é uma software house que opera com times Scrum. Estamos em transi
 9. Documente decisões arquiteturais (ADRs) para todas as decisões significativas
 10. Especifique APIs principais e interfaces
 11. Realize análise comparativa das alternativas e forneça recomendação inicial justificada
-12. Salve artefatos em `outputs/artifacts/architecture/`
+12. Salve artefatos em `architecture/`
 13. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -97,7 +97,7 @@ Antes de concluir, verifique:
 - [ ] Análise comparativa das alternativas realizada
 - [ ] Recomendação inicial fornecida e justificada
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/architecture/`
+- [ ] Todos os artefatos salvos em `architecture/`
 
 ## Dependências
 

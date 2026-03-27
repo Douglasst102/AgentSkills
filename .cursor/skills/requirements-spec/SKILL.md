@@ -53,7 +53,7 @@ Skill para especificação completa de requisitos de software.
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/requirements/`:
+Salve os seguintes arquivos em `requirements/`:
 - `srs.md` - Especificação de Requisitos de Software
 - `functional-requirements.md` - Requisitos funcionais
 - `non-functional-requirements.md` - Requisitos não-funcionais

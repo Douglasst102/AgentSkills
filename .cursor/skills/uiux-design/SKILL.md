@@ -400,7 +400,7 @@ Extrai padrões de design do código existente para criar um arquivo `system.md`
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/design/`:
+Salve os seguintes arquivos em `design/`:
 
 - `wireframes/` - Wireframes
 - `mockups/` - Mockups de alta fidelidade

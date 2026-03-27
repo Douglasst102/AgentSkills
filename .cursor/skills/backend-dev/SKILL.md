@@ -20,8 +20,8 @@ Skill para desenvolvimento completo de APIs e serviços backend. Você é um Des
 Antes de iniciar o desenvolvimento:
 
 1. **Análise de Entrada**
-   - Leia a Visão Geral da Arquitetura em `outputs/artifacts/architecture/` ou `Docs/arquitetura/visao-geral.md` (se disponível)
-   - Leia User Stories no padrão "Ready for Dev" em `outputs/artifacts/requirements/`
+   - Leia a Visão Geral da Arquitetura em `architecture/` ou `Docs/arquitetura/visao-geral.md` (se disponível)
+   - Leia User Stories no padrão "Ready for Dev" em `requirements/`
 
 2. **Verificação de Implementações Existentes**
    - Mapear cada Story ao módulo/serviço correspondente
@@ -127,7 +127,7 @@ Antes de iniciar o desenvolvimento:
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/backend/`:
+Salve os seguintes arquivos em `backend/`:
 - `src/` - Código fonte
 - `api/` - APIs
 - `models/` - Modelos

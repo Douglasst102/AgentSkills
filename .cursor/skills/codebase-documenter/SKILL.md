@@ -343,11 +343,11 @@ Esta skill é automaticamente chamada pelos seguintes agentes após conclusão d
 
 Documentos gerados devem ser salvos em:
 
-- **Frontend:** `outputs/artifacts/frontend/documentation/`
-- **Backend:** `outputs/artifacts/backend/documentation/`
-- **Infrastructure:** `outputs/artifacts/infrastructure/documentation/`
-- **Design:** `outputs/artifacts/design/` (sem subdiretório, pois design já é documentação)
-- **Security:** `outputs/artifacts/security/` (sem subdiretório, pois security já é documentação)
+- **Frontend:** `frontend/documentation/`
+- **Backend:** `backend/documentation/`
+- **Infrastructure:** `infrastructure/documentation/`
+- **Design:** `design/` (sem subdiretório, pois design já é documentação)
+- **Security:** `security/` (sem subdiretório, pois security já é documentação)
 
 ### Padrões de Documentação por Contexto
 

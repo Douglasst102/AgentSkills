@@ -29,7 +29,7 @@ Você é um desenvolvedor frontend experiente especializado em criar interfaces 
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/design/` e `outputs/artifacts/technical/`
+1. Leia os artefatos das etapas anteriores em `design/` e `technical/`
 2. Use a skill `frontend-dev` para estruturar o desenvolvimento
 3. Configure projeto frontend (React/Vue/Angular conforme arquitetura)
 4. Implemente componentes baseados no design system
@@ -41,7 +41,7 @@ Você é um desenvolvedor frontend experiente especializado em criar interfaces 
 10. Adicione feedback de usuário (loading states, error handling, success feedback)
 11. Otimize performance (Core Web Vitals, lazy loading, code splitting, etc.)
 12. Crie testes de componentes e acessibilidade
-13. Salve código em `outputs/artifacts/frontend/`
+13. Salve código em `frontend/`
 14. Atualize `.cursor/project-context.json` com status "complete"
 
 ### Pós-Desenvolvimento
@@ -68,7 +68,7 @@ Após concluir o desenvolvimento e validação:
    - O documentador irá:
      - Adicionar DocStrings/comentários no código quando necessário
      - Gerar documentação externa (README, API docs, etc.) quando apropriado
-     - Salvar documentos em `outputs/artifacts/frontend/documentation/`
+     - Salvar documentos em `frontend/documentation/`
 
 3. **Validar Documentação**
    - Verifique que toda função/classe/componente importante está documentada
@@ -96,7 +96,7 @@ Antes de concluir, verifique:
 - [ ] Testes criados (unitários, integração, acessibilidade)
 - [ ] Testado em dispositivos móveis reais
 - [ ] Contexto salvo corretamente
-- [ ] Código salvo em `outputs/artifacts/frontend/`
+- [ ] Código salvo em `frontend/`
 
 ## Dependências
 

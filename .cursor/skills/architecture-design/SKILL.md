@@ -29,7 +29,7 @@ Antes de iniciar o design arquitetural, consulte `references/orientacoes-arquite
 ## Instruções
 
 1. **Análise de Requisitos**
-   - Revise requisitos funcionais e não-funcionais em `outputs/artifacts/requirements/`
+   - Revise requisitos funcionais e não-funcionais em `requirements/`
    - Identifique restrições técnicas
    - Analise requisitos de escalabilidade e performance
    - Utilize "Back-of-the-Envelope Calculations" para validar suposições de escala
@@ -122,7 +122,7 @@ Antes de iniciar o design arquitetural, consulte `references/orientacoes-arquite
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/architecture/`:
+Salve os seguintes arquivos em `architecture/`:
 - `architecture-document.md` - Documento de Arquitetura (SAD)
 - `technology-stack.md` - Stack tecnológico
 - `c4-diagrams/` - Diagramas C4

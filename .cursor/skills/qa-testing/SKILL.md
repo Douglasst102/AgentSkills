@@ -19,8 +19,8 @@ Skill para planejamento e execução completa de testes, incluindo geração a p
 
 ## Insumos
 
-- **User Stories "Ready for Dev":** quando existir, leia `outputs/artifacts/requirements/user-stories-ready-for-dev.md`. Use cada critério de aceitação (AC) em formato Gherkin como cenário testável para casos de teste e testes automatizados.
-- Requisitos e artefatos de frontend/backend em `outputs/artifacts/` conforme o fluxo do agente.
+- **User Stories "Ready for Dev":** quando existir, leia `requirements/user-stories-ready-for-dev.md`. Use cada critério de aceitação (AC) em formato Gherkin como cenário testável para casos de teste e testes automatizados.
+- Requisitos e artefatos de frontend/backend nas pastas de etapa na raiz do repositório (ex.: `requirements/`, `frontend/`, `backend/`) conforme o fluxo do agente.
 
 ## Testes a partir de critérios de aceitação
 
@@ -62,7 +62,7 @@ Scripts Python em `scripts/` (executados no host, não no container):
 
 ## Outputs
 
-Salve em `outputs/artifacts/testing/`:
+Salve em `testing/`:
 
 - `test-strategy.md` – Estratégia de testes
 - `test-cases.md` – Casos de teste

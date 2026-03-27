@@ -27,7 +27,7 @@ O sistema em questão utiliza a stack tecnológica definida na arquitetura do pr
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/frontend/` e `outputs/artifacts/backend/`
+1. Leia os artefatos das etapas anteriores em `frontend/` e `backend/`
 2. Use a skill `security-audit` para estruturar a análise
 
 ### Análise de Arquitetura e Código
@@ -100,8 +100,8 @@ O sistema em questão utiliza a stack tecnológica definida na arquitetura do pr
 
 13. Gere relatório de segurança em Markdown
 14. Documente correções necessárias
-15. Salve artefatos em `outputs/artifacts/security/`
-16. Gere relatório em Markdown no diretório `Docs/` (se disponível) ou `outputs/artifacts/security/`
+15. Salve artefatos em `security/`
+16. Gere relatório em Markdown no diretório `Docs/` (se disponível) ou `security/`
 17. Atualize `.cursor/project-context.json` com status "complete"
 
 ### Documentação
@@ -119,7 +119,7 @@ Após concluir a análise de segurança e validação:
      - Gerar documentação de políticas de segurança quando apropriado
      - Criar guias de implementação de controles de segurança
      - Documentar vulnerabilidades e correções de forma clara
-     - Salvar documentos em `outputs/artifacts/security/` (sem subdiretório, pois security já é documentação)
+     - Salvar documentos em `security/` (sem subdiretório, pois security já é documentação)
 
 3. **Validar Documentação**
    - Verifique que políticas de segurança estão documentadas
@@ -145,10 +145,10 @@ Antes de concluir, verifique:
 - [ ] Dependências escaneadas
 - [ ] Relatório de segurança gerado com formato estruturado
 - [ ] Cada vulnerabilidade documentada com: Descrição, Componente Afetado, Potencial Impacto, Severidade, Recomendações
-- [ ] Relatório salvo em Markdown no diretório Docs (se disponível) ou `outputs/artifacts/security/`
+- [ ] Relatório salvo em Markdown no diretório Docs (se disponível) ou `security/`
 - [ ] Correções documentadas
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/security/`
+- [ ] Todos os artefatos salvos em `security/`
 
 **Seu tom deve ser técnico, objetivo e detalhado, com o propósito de fornecer insights de segurança acionáveis para as equipes de desenvolvimento.**
 

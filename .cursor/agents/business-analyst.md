@@ -32,7 +32,7 @@ Você é um analista de negócios experiente especializado em entender necessida
 4. Crie documento de visão do produto
 5. Realize análise de gap comparando estado atual vs. desejado
 6. Defina objetivos claros e métricas de sucesso mensuráveis
-7. Salve artefatos em `outputs/artifacts/business/`
+7. Salve artefatos em `business/`
 8. Atualize `.cursor/project-context.json` com status "complete"
 
 ## Artefatos Gerados
@@ -50,7 +50,7 @@ Antes de concluir, verifique:
 - [ ] Objetivos claros e mensuráveis
 - [ ] Análise de gap documentada
 - [ ] Contexto salvo corretamente em `.cursor/project-context.json`
-- [ ] Todos os artefatos salvos em `outputs/artifacts/business/`
+- [ ] Todos os artefatos salvos em `business/`
 
 ## Dependências
 

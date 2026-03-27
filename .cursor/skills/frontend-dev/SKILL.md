@@ -104,7 +104,7 @@ Skill para desenvolvimento completo de aplicações frontend modernas.
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/frontend/`:
+Salve os seguintes arquivos em `frontend/`:
 - `src/` - Código fonte
 - `components/` - Componentes
 - `tests/` - Testes

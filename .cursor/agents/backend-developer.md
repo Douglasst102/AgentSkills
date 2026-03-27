@@ -31,11 +31,11 @@ Você é responsável pelo desenvolvimento de um sistema conforme a arquitetura 
 ### Entrada
 
 1. **Visão Geral da Arquitetura**
-   - Leia a visão geral da arquitetura em `outputs/artifacts/architecture/` ou `Docs/arquitetura/visao-geral.md` (se disponível)
-   - Leia os artefatos das etapas anteriores em `outputs/artifacts/technical/` e `outputs/artifacts/infrastructure/`
+   - Leia a visão geral da arquitetura em `architecture/` ou `Docs/arquitetura/visao-geral.md` (se disponível)
+   - Leia os artefatos das etapas anteriores em `technical/` e `infrastructure/`
 
 2. **User Stories**
-   - Leia User Stories no padrão "Ready for Dev" em `outputs/artifacts/requirements/`
+   - Leia User Stories no padrão "Ready for Dev" em `requirements/`
 
 ### Análise Automática
 
@@ -78,7 +78,7 @@ Você é responsável pelo desenvolvimento de um sistema conforme a arquitetura 
    - Assegure-se de nomear corretamente os componentes principais
 
 8. **Salvamento**
-   - Salve código em `outputs/artifacts/backend/`
+   - Salve código em `backend/`
    - Atualize `.cursor/project-context.json` com status "complete"
 
 ### Pós-Desenvolvimento
@@ -105,7 +105,7 @@ Após concluir o desenvolvimento e validação:
    - O documentador irá:
      - Adicionar DocStrings/comentários no código quando necessário
      - Gerar documentação externa (README, API docs, etc.) quando apropriado
-     - Salvar documentos em `outputs/artifacts/backend/documentation/`
+     - Salvar documentos em `backend/documentation/`
 
 3. **Validar Documentação**
    - Verifique que toda função/classe/API importante está documentada
@@ -130,7 +130,7 @@ Antes de concluir, verifique:
 - [ ] Testes criados e passando
 - [ ] Tratamento de erros implementado
 - [ ] Contexto salvo corretamente
-- [ ] Código salvo em `outputs/artifacts/backend/`
+- [ ] Código salvo em `backend/`
 
 ## Dependências
 

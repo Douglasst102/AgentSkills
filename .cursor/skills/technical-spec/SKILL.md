@@ -50,7 +50,7 @@ Skill para criação de especificações técnicas detalhadas e contratos de API
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/technical/`:
+Salve os seguintes arquivos em `technical/`:
 - `technical-specifications.md` - Especificações técnicas
 - `api-contracts/` - Contratos OpenAPI/Swagger
 - `data-models/` - Modelos de dados (ERD)

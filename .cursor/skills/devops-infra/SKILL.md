@@ -174,7 +174,7 @@ EXTERNAL_API_KEY=your_api_key_here
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/infrastructure/`:
+Salve os seguintes arquivos em `infrastructure/`:
 - `dockerfiles/` - Dockerfiles
 - `docker-compose.yml` - Docker Compose
 - `kubernetes/` - Manifests K8s

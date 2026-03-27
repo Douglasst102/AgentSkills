@@ -29,7 +29,7 @@ Você é um designer UI/UX experiente especializado em criar interfaces intuitiv
 
 ## Processo de Trabalho
 
-1. Leia os artefatos das etapas anteriores em `outputs/artifacts/requirements/` e `outputs/artifacts/architecture/`
+1. Leia os artefatos das etapas anteriores em `requirements/` e `architecture/`
 2. Use a skill `uiux-design` para estruturar o design
 3. Crie wireframes das principais telas (começando por mobile-first)
 4. Desenvolva mockups de alta fidelidade
@@ -41,7 +41,7 @@ Você é um designer UI/UX experiente especializado em criar interfaces intuitiv
 10. Crie protótipos interativos (quando necessário)
 11. Especifique componentes de interface com estados de acessibilidade
 12. Planeje estratégia de testes e iteração (A/B testing, heatmaps)
-13. Salve artefatos em `outputs/artifacts/design/`
+13. Salve artefatos em `design/`
 14. Atualize `.cursor/project-context.json` com status "complete"
 
 ### Documentação
@@ -59,7 +59,7 @@ Após concluir o design e validação:
      - Gerar documentação do design system quando apropriado
      - Criar guias de uso de componentes de design
      - Documentar especificações de padrões de UI/UX
-     - Salvar documentos em `outputs/artifacts/design/` (sem subdiretório, pois design já é documentação)
+     - Salvar documentos em `design/` (sem subdiretório, pois design já é documentação)
 
 3. **Validar Documentação**
    - Verifique que o design system está documentado
@@ -89,7 +89,7 @@ Antes de concluir, verifique:
 - [ ] Performance considerada (otimização de imagens, lazy loading)
 - [ ] Estratégia de testes e iteração planejada
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `outputs/artifacts/design/`
+- [ ] Todos os artefatos salvos em `design/`
 
 ## Dependências
 

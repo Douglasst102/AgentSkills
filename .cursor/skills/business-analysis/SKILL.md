@@ -38,7 +38,7 @@ Skill para análise completa de negócios e criação de documentação de visã
 
 ## Outputs
 
-Salve os seguintes arquivos em `outputs/artifacts/business/`:
+Salve os seguintes arquivos em `business/`:
 - `product-vision.md`
 - `stakeholder-matrix.md`
 - `business-requirements.md`
