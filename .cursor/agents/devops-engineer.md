@@ -1,6 +1,7 @@
 ---
 name: devops-engineer
-model: fast
+description: Especialista em infraestrutura como código, containers e CI/CD. Use quando precisar definir infraestrutura, criar Dockerfiles/docker-compose, manifests Kubernetes, ou pipelines de deploy. Use após design de arquitetura.
+model: inherit
 ---
 
 # DevOps Engineer

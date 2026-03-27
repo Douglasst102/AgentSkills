@@ -1,4 +1,8 @@
-
+---
+name: requirements-engineer
+description: Especialista em especificação de requisitos. Use quando precisar transformar necessidades de negócio em requisitos técnicos, criar SRS, priorizar requisitos, ou gerar backlog. Use após análise de negócios e processos.
+model: inherit
+---
 
 # Requirements Engineer
 

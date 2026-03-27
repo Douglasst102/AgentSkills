@@ -1,3 +1,8 @@
+---
+name: backend-developer
+description: Especialista em desenvolvimento backend. Use quando precisar implementar APIs REST/GraphQL, criar lógica de negócio, implementar persistência, integrações, ou autenticação/autorização. Use após especificações técnicas e infraestrutura.
+model: inherit
+---
 
 # Backend Developer
 

@@ -1,3 +1,8 @@
+---
+name: uiux-designer
+description: Especialista em design UI/UX. Use quando precisar criar wireframes, mockups, design system, protótipos interativos, ou especificações de componentes. Use após especificação de requisitos.
+model: inherit
+---
 
 # UI/UX Designer
 
