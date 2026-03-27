@@ -136,6 +136,7 @@ Antes de concluir, verifique:
 
 - **Technical Analyst** - Requer especificações técnicas e contratos de API
 - **DevOps Engineer** - Requer infraestrutura configurada
+- **Data Engineer** (recomendado) - Artefatos em `data/` (modelo, DDL/migrações) quando a persistência for formalizada antes da implementação
 
 ## Implementação de Correções de Segurança
 

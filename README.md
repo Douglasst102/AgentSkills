@@ -6,7 +6,7 @@ Sistema completo de desenvolvimento de software usando agentes especializados no
 
 Este projeto implementa uma cadeia de desenvolvimento de software completa utilizando:
 
-- **Subagents** - 12 agentes especializados em diferentes etapas do desenvolvimento
+- **Subagents** - 13 agentes especializados em diferentes etapas do desenvolvimento
 - **Skills** - Capacidades específicas de cada agente
 - **Commands** - Comandos para orquestração e controle
 - **MCP** - Integrações externas opcionais
@@ -28,7 +28,7 @@ AgentSkills/
 ├── technical/             # Especificação técnica, OpenAPI
 ├── infrastructure/        # Docker, Kubernetes, CI/CD
 ├── design/                # Wireframes, mockups, design system
-├── data/                  # Modelos de dados, ERD
+├── data/                  # Documentação de dados, modelos, DDL/migrações (Data Engineer)
 ├── frontend/              # Código e documentação frontend
 ├── backend/               # Código e documentação backend
 ├── security/              # Relatórios e análise de segurança
@@ -70,33 +70,38 @@ AgentSkills/
 - **Skill:** `devops-infra`
 - **Responsabilidade:** Infraestrutura, Docker, Kubernetes, CI/CD
 
-### 7. UI/UX Designer
+### 7. Data Engineer
+- **Arquivo:** `.cursor/agents/data-engineer.md`
+- **Skill:** `data-engineering`
+- **Responsabilidade:** Modelagem conceitual/lógica, documentação de dados, DDL/migrações e glossário ancorados em requisitos, arquitetura e stack
+
+### 8. UI/UX Designer
 - **Arquivo:** `.cursor/agents/uiux-designer.md`
 - **Skill:** `uiux-design` (integra `interface-design`)
 - **Responsabilidade:** Wireframes, mockups, design system
 - **Comandos:** `/interface-design:init`, `/interface-design:status`, `/interface-design:audit`, `/interface-design:extract`
 
-### 8. Frontend Developer
+### 9. Frontend Developer
 - **Arquivo:** `.cursor/agents/frontend-developer.md`
 - **Skill:** `frontend-dev`
 - **Responsabilidade:** Implementação frontend, componentes, performance
 
-### 9. Backend Developer
+### 10. Backend Developer
 - **Arquivo:** `.cursor/agents/backend-developer.md`
 - **Skill:** `backend-dev`
 - **Responsabilidade:** Implementação backend, APIs, lógica de negócio
 
-### 10. Security Engineer
+### 11. Security Engineer
 - **Arquivo:** `.cursor/agents/security-engineer.md`
 - **Skill:** `security-audit`
 - **Responsabilidade:** Análise de segurança, vulnerabilidades, relatórios
 
-### 11. Codebase Documenter
+### 12. Codebase Documenter
 - **Arquivo:** `.cursor/agents/codebase-documenter.md`
 - **Skill:** `codebase-documenter`
 - **Responsabilidade:** Documentação de código (DocStrings, comentários, documentação externa), criação de README, API docs e guias de arquitetura
 
-### 12. QA Engineer
+### 13. QA Engineer
 - **Arquivo:** `.cursor/agents/qa-engineer.md`
 - **Skill:** `qa-testing`
 - **Responsabilidade:** Estratégia de testes, casos de teste, validação

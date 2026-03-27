@@ -32,6 +32,11 @@
       "artifacts": {},
       "completedAt": null
     },
+    "data": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
     "design": {
       "status": "pending",
       "artifacts": {},

@@ -27,12 +27,13 @@ O Agent irá orquestrar automaticamente todos os subagents necessários.
 4. **Software Architect** - Design de arquitetura
 5. **Technical Analyst** - Especificações técnicas detalhadas
 6. **DevOps Engineer** - Infraestrutura e containers (paralelo com Technical)
-7. **UI/UX Designer** - Design e mockups (paralelo com Architecture)
-8. **Frontend Developer** - Implementação frontend
-9. **Backend Developer** - Implementação backend (paralelo com Frontend)
-10. **Security Engineer** - Revisão de segurança
-11. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
-12. **QA Engineer** - Testes e validação final
+7. **Data Engineer** - Documentação de dados, modelo conceitual/lógico e DDL/migrações em `data/` (após Technical e Infraestrutura quando aplicável)
+8. **UI/UX Designer** - Design e mockups (paralelo com Architecture quando fizer sentido)
+9. **Frontend Developer** - Implementação frontend
+10. **Backend Developer** - Implementação backend (paralelo com Frontend; pode consumir artefatos em `data/`)
+11. **Security Engineer** - Revisão de segurança
+12. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
+13. **QA Engineer** - Testes e validação final
 
 ## Validação
 

@@ -14,6 +14,7 @@ Exemplos:
 - `/activate-agent requirements-engineer` - Para especificação de requisitos
 - `/activate-agent technical-analyst` - Para análise técnica
 - `/activate-agent devops-engineer` - Para infraestrutura
+- `/activate-agent data-engineer` - Para modelagem, documentação de dados e esquemas
 - `/activate-agent uiux-designer` - Para design UI/UX
 - `/activate-agent frontend-developer` - Para desenvolvimento frontend
 - `/activate-agent backend-developer` - Para desenvolvimento backend
