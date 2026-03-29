@@ -2,40 +2,60 @@
 
 ## 1. Objetivos
 
-- Garantir qualidade do software
-- Validar requisitos funcionais
-- Validar requisitos não-funcionais
+- Garantir qualidade do software de forma incremental, validando cada User Story
+- Validar requisitos funcionais e não-funcionais
+- Manter uma suíte regressiva cumulativa
 
 ## 2. Níveis de Teste
 
 ### Testes Unitários
-- Objetivo: Validar unidades individuais
-- Ferramentas: Jest, pytest, JUnit
+- Objetivo: Validar unidades individuais (funções, hooks, componentes isolados)
+- Ferramentas: Jest, React Testing Library
+- Localização: `testing/unit/`
 - Cobertura mínima: 80%
 
 ### Testes de Integração
-- Objetivo: Validar integração entre componentes
-- Ferramentas: Supertest, pytest
-- Escopo: APIs, banco de dados
+- Objetivo: Validar integração entre componentes, APIs e contextos
+- Ferramentas: React Testing Library, MSW
+- Localização: `testing/integration/`
+- Escopo: Componentes com dependências, chamadas API, formulários completos
 
 ### Testes E2E
-- Objetivo: Validar fluxos completos
-- Ferramentas: Cypress, Playwright
-- Escopo: Fluxos críticos
+- Objetivo: Validar fluxos completos do usuário
+- Ferramentas: Playwright
+- Localização: `testing/e2e/`
+- Configuração: `testing/playwright.config.ts`
+- Escopo: Fluxos críticos derivados dos ACs das User Stories
 
-## 3. Casos de Teste
+## 3. Execução
+
+- Todos os testes rodam **dentro do container Playwright**
+- Execução é **cumulativa**: novos testes + testes de stories anteriores
+- Relatórios do Playwright: `testing/playwright-report/`, `testing/test-results/`
+- Cobertura Jest: `coverage/`
+
+## 4. Casos de Teste
 
 ### Estrutura
-- ID do caso
+- ID do caso (alinhado ao AC da User Story)
 - Descrição
 - Pré-condições
-- Steps
+- Steps (Dado / Quando / Então)
 - Resultado esperado
+- Nível (unit, integração ou E2E)
 - Prioridade
 
-## 4. Critérios de Aceitação
+## 5. Critérios de Aceitação
 
-- Todos os testes passando
+- Todos os testes passando (unit, integração e E2E)
 - Cobertura mínima atingida
-- Bugs críticos corrigidos
-- Documentação completa
+- Bugs críticos documentados
+- Relatório consolidado gerado em `testing/test-results.md`
+
+## 6. Artefatos
+
+- `testing/test-strategy.md` — este documento
+- `testing/test-cases.md` — casos de teste acumulados
+- `testing/test-results.md` — relatório consolidado da última execução
+- `testing/bug-reports.md` — bugs encontrados
+- `testing/test-coverage.md` — cobertura acumulada

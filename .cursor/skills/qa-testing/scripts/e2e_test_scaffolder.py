@@ -6,7 +6,7 @@ Scans Next.js pages/app directory and generates Playwright test files
 with common interactions, Page Object Model classes, and configuration.
 
 Usage:
-    python e2e_test_scaffolder.py src/app/ --output e2e/
+    python e2e_test_scaffolder.py src/app/ --output testing/e2e/
     python e2e_test_scaffolder.py pages/ --include-pom --routes "/login,/dashboard"
 """
 
@@ -754,7 +754,7 @@ def main():
         epilog="""
 Examples:
   # Scaffold E2E tests for App Router
-  python e2e_test_scaffolder.py src/app/ --output e2e/
+  python e2e_test_scaffolder.py src/app/ --output testing/e2e/
 
   # Include Page Object Models
   python e2e_test_scaffolder.py src/app/ --include-pom
@@ -772,8 +772,8 @@ Examples:
     )
     parser.add_argument(
         '--output', '-o',
-        default='e2e',
-        help='Output directory for test files (default: e2e/)'
+        default='testing/e2e',
+        help='Output directory for test files (default: testing/e2e/)'
     )
     parser.add_argument(
         '--include-pom',

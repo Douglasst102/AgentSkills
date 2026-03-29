@@ -6,7 +6,7 @@ Scans React/TypeScript components and generates Jest + React Testing Library
 test stubs with proper structure, accessibility tests, and common patterns.
 
 Usage:
-    python test_suite_generator.py src/components/ --output __tests__/
+    python test_suite_generator.py src/components/ --output testing/unit/
     python test_suite_generator.py src/ --include-a11y --scan-only
 """
 
@@ -534,13 +534,13 @@ def main():
         epilog="""
 Examples:
   # Scan and generate tests
-  python test_suite_generator.py src/components/ --output __tests__/
+  python test_suite_generator.py src/components/ --output testing/unit/
 
   # Scan only (don't generate)
   python test_suite_generator.py src/components/ --scan-only
 
   # Include accessibility tests
-  python test_suite_generator.py src/ --include-a11y --output tests/
+  python test_suite_generator.py src/ --include-a11y --output testing/unit/
 
   # Verbose output
   python test_suite_generator.py src/components/ -v
@@ -552,7 +552,7 @@ Examples:
     )
     parser.add_argument(
         '--output', '-o',
-        help='Output directory for test files (default: <source>/__tests__/)'
+        help='Output directory for test files (default: testing/unit/)'
     )
     parser.add_argument(
         '--include-a11y',

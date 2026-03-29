@@ -1,6 +1,6 @@
 # Execução de testes com Playwright
 
-Guia para escrita e execução de testes E2E com Playwright. A instalação (npm) e a execução (npx) devem ocorrer **sempre dentro do container Playwright**; ver [playwright-docker.md](playwright-docker.md).
+Guia para escrita e execução de testes E2E com Playwright. Os testes ficam em `testing/e2e/` e a configuração em `testing/playwright.config.ts`. A instalação (npm) e a execução (npx) devem ocorrer **sempre dentro do container Playwright**; ver [playwright-docker.md](playwright-docker.md).
 
 ---
 
@@ -17,7 +17,6 @@ test('fluxo de login', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).fill('password123');
   await page.getByRole('button', { name: 'Sign In' }).click();
 
-  // Adicione assertions manualmente
   await expect(page).toHaveURL(/.*dashboard/);
 });
 ```
@@ -78,7 +77,7 @@ await page.getByRole('button', { name: 'Sign in' }).click();
 await page.waitForURL('**/dashboard');
 await page.context().storageState({ path: 'auth.json' });
 
-// Em playwright.config.ts: use storageState: 'auth.json' no project
+// Em testing/playwright.config.ts: use storageState: 'auth.json' no project
 ```
 
 ### Navegação e respostas
@@ -94,9 +93,31 @@ expect(response.status()).toBe(200);
 
 ---
 
+## Estrutura dos testes E2E
+
+Os specs ficam em `testing/e2e/` e a configuração em `testing/playwright.config.ts`:
+
+```text
+testing/
+├── e2e/
+│   ├── login.spec.ts
+│   ├── dashboard.spec.ts
+│   └── checkout.spec.ts
+├── playwright.config.ts
+├── playwright-report/        # Gerado pelo container
+└── test-results/             # Gerado pelo container
+```
+
+---
+
 ## Execução da suíte E2E
 
-**Regra:** Use o **container Playwright** e rode **dentro dele** `npm ci` e `npx playwright test`. Nunca rode npm/npx de Playwright no host para esta suíte.
+**Regra:** Use o **container Playwright** e rode **dentro dele** `npm ci` e `npx playwright test`. Nunca rode npm/npx no host.
 
-- Build e execução: ver [playwright-docker.md](playwright-docker.md).
+```bash
+docker run --rm -v "${PWD}:/app" -w /app --ipc=host --init qa-playwright sh -c "npm ci && npx playwright test --config=testing/playwright.config.ts"
+```
+
+- Build e execução detalhados: ver [playwright-docker.md](playwright-docker.md).
 - O agente deve invocar apenas comandos Docker no host; os comandos npm/npx rodam no container.
+- Relatórios ficam em `testing/playwright-report/` e `testing/test-results/` no projeto (visíveis no host via volume).
