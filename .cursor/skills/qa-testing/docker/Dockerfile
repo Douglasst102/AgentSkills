@@ -1,10 +1,15 @@
-# Imagem oficial Playwright com Node e browsers instalados.
-# Uso: monte o projeto em /app e rode npm ci e npx playwright test dentro do container.
-# Nunca rode npm/npx de Playwright no host; use sempre este container.
-# Ref: https://playwright.dev/docs/docker
+# Imagem oficial Playwright: Node.js + browsers (Chromium, Firefox, WebKit).
+#
+# Este é o "container de QA" unificado da skill qa-testing:
+#   - Jest (unit/integration) vem do package.json do projeto e roda após npm ci — não está na imagem base.
+#   - Playwright (@playwright/test) idem, via devDependencies do projeto.
+#
+# Montar o código em /app e executar DENTRO do container, por exemplo:
+#   npm ci && npm test -- --coverage && npx playwright test --config=testing/playwright.config.ts
+#
+# No host: apenas Docker (build/run/compose). Ref: https://playwright.dev/docs/docker
 FROM mcr.microsoft.com/playwright:v1.49.0-noble
 
 WORKDIR /app
 
-# Sem ENTRYPOINT/CMD fixos: o agente ou usuário invoca comandos explícitos, por exemplo:
-# docker run --rm -v ${PWD}:/app -w /app --ipc=host --init qa-playwright sh -c "npm ci && npx playwright test"
+# Sem ENTRYPOINT/CMD: comandos explícitos em docker run / compose (ver docker/README.md).

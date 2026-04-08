@@ -1,0 +1,51 @@
+# Modelo para E2E quando frontend/backend rodam em outros containers na mesma rede.
+# Copie e adapte (nomes de imagem, portas, caminhos). Não execute "como está" sem
+# definir BASE_URL e a rede corretamente.
+#
+# Jest (unit/integration): use o mesmo serviço `playwright` com volume apontando para
+# o pacote com package.json (ex. só ./frontend), sem subir frontend/backend — não é
+# necessário para a maioria dos testes Jest (MSW / mocks).
+#
+# Exemplos de BASE_URL dentro do compose:
+#   - Mesma rede Compose: http://frontend:3000 (nome do serviço + porta interna)
+#   - App no host (Docker Desktop): http://host.docker.internal:3000
+#
+# Uso:
+#   docker compose -f docker-compose.qa.yml --profile e2e run --rm playwright
+
+services:
+  # Descomente e configure conforme seu projeto:
+  #
+  # frontend:
+  #   build: ./frontend
+  #   ports:
+  #     - "3000:3000"
+  #   networks: [qa-net]
+  #
+  # backend:
+  #   build: ./backend
+  #   ports:
+  #     - "4000:4000"
+  #   networks: [qa-net]
+
+  playwright:
+    profiles: ["e2e"]
+    image: qa-playwright
+    ipc: host
+    init: true
+    working_dir: /app
+    environment:
+      BASE_URL: ${BASE_URL:-http://frontend:3000}
+    volumes:
+      - .:/app
+      - node_modules_root:/app/node_modules
+    networks: [qa-net]
+    # depends_on: [frontend]
+    command: sh -c "npm ci && npx playwright test --config=testing/playwright.config.ts"
+
+networks:
+  qa-net:
+    driver: bridge
+
+volumes:
+  node_modules_root:

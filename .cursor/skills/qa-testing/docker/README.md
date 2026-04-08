@@ -1,10 +1,17 @@
-# Container Playwright para QA Testing
+# Container de QA para testes
 
 Todos os testes (unitários, integração e E2E) rodam **dentro deste container**. No host, o agente só executa comandos Docker.
 
+## O que a imagem faz (e o que não faz)
+
+A imagem `qa-playwright` é baseada em `mcr.microsoft.com/playwright` (**Node.js + browsers**). Ela **não** instala Jest nem `@playwright/test` por conta própria: esses pacotes vêm do **`package.json` do projeto** e são instalados com `npm ci` **dentro** do container após montar o código em `/app`.
+
+- **Jest** e **Playwright** são dois programas diferentes; ambos rodam no **mesmo** container de QA, em sequência ou em comandos separados.
+- **Host sem Node:** não é necessário instalar Node/npm na máquina local — só Docker (e a IDE).
+
 ## Build
 
-A partir da **raiz do projeto** que contém os testes (e package.json):
+A partir da **raiz do projeto** que contém os testes (e `package.json`):
 
 ```bash
 docker build -t qa-playwright -f .cursor/skills/qa-testing/docker/Dockerfile .
@@ -16,12 +23,37 @@ Ou, copiando o Dockerfile para o projeto:
 docker build -t qa-playwright -f docker/Dockerfile .
 ```
 
+## Ferramentas no container
+
+- **Jest** — `npm test` (dependência do projeto)
+- **Playwright** — `npx playwright test` (dependência do projeto)
+
+## Jest vs E2E: precisa da aplicação rodando?
+
+| Suíte | Precisa de frontend/backend no ar? |
+|-------|-----------------------------------|
+| Jest (unit + integração típica) | **Não** — jsdom + MSW/mocks. |
+| Playwright (E2E) | **Sim** — o browser precisa de `baseURL` acessível. |
+
+Opções para E2E:
+
+1. **`webServer` no `playwright.config.ts`** — sobe `npm run dev` (ou similar) no mesmo container que já tem o repo em `/app` (ver comentário no exemplo em `SKILL.md`).
+2. **`docker compose`** — serviços `frontend` / `backend` + `playwright` na mesma rede; `BASE_URL=http://frontend:3000`. Modelo: [`docker-compose.example.yml`](docker-compose.example.yml).
+
 ## Executar testes
 
-O projeto é montado em volume em `/app`. Os testes ficam sob `testing/` e o Playwright usa `testing/playwright.config.ts`:
+### Monorepo ou só o frontend
+
+Monte a pasta que contém o `package.json` usado pelos testes:
 
 ```bash
-# Suíte completa (unit + integração + E2E)
+docker run --rm -v "${PWD}/frontend:/app" -w /app --ipc=host --init qa-playwright sh -c "npm ci && npm test -- --coverage"
+```
+
+### Raiz única (app + testing na mesma raiz)
+
+```bash
+# Suíte completa (unit + integração + E2E) — E2E exige app acessível em BASE_URL
 docker run --rm -v "${PWD}:/app" -w /app --ipc=host --init qa-playwright sh -c "npm ci && npm test -- --coverage && npx playwright test --config=testing/playwright.config.ts"
 
 # Somente unitários + integração (Jest)
@@ -36,15 +68,19 @@ docker run --rm -v "${PWD}:/app" -w /app --ipc=host --init qa-playwright sh -c "
 
 ### Artefatos gerados pelo container
 
-Com o projeto montado em `/app`, os artefatos ficam visíveis no host sob `testing/`:
-
 - `testing/playwright-report/` — relatório HTML do Playwright
 - `testing/test-results/` — traces, screenshots, vídeos
-- `coverage/` — relatório de cobertura Jest (caminho padrão, configurável no `jest.config`)
+- `coverage/` — cobertura Jest (configurável no Jest)
 
-## Docker Compose (opcional)
+Caminhos no `playwright.config.ts` em `testing/` são relativos a esse arquivo (`./e2e`, `./test-results`, `./playwright-report`).
 
-No projeto que usa esta imagem, pode existir um `docker-compose.yml`:
+### Volume `node_modules` (recomendado no Windows)
+
+No Compose, use um volume nomeado para `/app/node_modules` para não gravar milhares de arquivos no bind mount do host e evitar binários nativos incompatíveis. Exemplo em [`docker-compose.example.yml`](docker-compose.example.yml).
+
+## Docker Compose
+
+Compose mínimo (equivalente ao `docker run` na raiz do repo):
 
 ```yaml
 services:
@@ -58,23 +94,19 @@ services:
     command: sh -c "npm ci && npm test -- --coverage && npx playwright test --config=testing/playwright.config.ts"
 ```
 
-Uso:
+Modelo com profile `e2e`, rede e `BASE_URL` para stacks com frontend/backend: [`docker-compose.example.yml`](docker-compose.example.yml).
 
 ```bash
 docker compose run playwright
-```
-
-Ou sobrescrevendo o comando:
-
-```bash
-docker compose run playwright sh -c "npm ci && npx playwright test --config=testing/playwright.config.ts"
+# ou, com o exemplo que usa profile:
+docker compose -f docker-compose.qa.yml --profile e2e run --rm playwright
 ```
 
 ## Uso pelo agente
 
 1. No host, o agente só executa comandos **Docker** (build, run ou compose run).
-2. O agente **nunca** roda `npm` ou `npx` no host para esta suíte.
+2. O agente **não** roda `npm` ou `npx` no host para esta suíte.
 3. A suíte é **cumulativa**: cada execução roda todos os testes (novos + anteriores).
-4. Resultado: exit code do processo no container; stdout/stderr no terminal; artefatos em `testing/playwright-report/`, `testing/test-results/` e `coverage/` no projeto.
+4. Resultado: exit code; stdout/stderr; artefatos em `testing/playwright-report/`, `testing/test-results/` e `coverage/`.
 
 Detalhes: [../references/playwright-docker.md](../references/playwright-docker.md).

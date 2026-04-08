@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Coverage Analyzer
+[LEGADO] Coverage Analyzer — Python
 
-Parses Jest/Istanbul coverage reports and identifies gaps, uncovered branches,
-and provides actionable recommendations for improving test coverage.
+Este arquivo está depreciado. Use a versão Node.js:
+    node coverage_analyzer.mjs coverage/coverage-final.json --threshold 80
+    node coverage_analyzer.mjs coverage/ --format html --output report.html
+    node coverage_analyzer.mjs coverage/ --critical-paths
 
-Usage:
-    python coverage_analyzer.py coverage/coverage-final.json --threshold 80
-    python coverage_analyzer.py coverage/ --format html --output report.html
-    python coverage_analyzer.py coverage/ --critical-paths
+Parses Jest/Istanbul coverage reports and identifies gaps,
+uncovered branches, and provides actionable recommendations for improving test coverage.
 """
 
 import os

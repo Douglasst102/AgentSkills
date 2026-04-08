@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-E2E Test Scaffolder
+[LEGADO] E2E Test Scaffolder — Python
+
+Este arquivo está depreciado. Use a versão Node.js:
+    node e2e_test_scaffolder.mjs src/app/ --output testing/e2e/
+    node e2e_test_scaffolder.mjs pages/ --include-pom --routes "/login,/dashboard"
 
 Scans Next.js pages/app directory and generates Playwright test files
 with common interactions, Page Object Model classes, and configuration.
-
-Usage:
-    python e2e_test_scaffolder.py src/app/ --output testing/e2e/
-    python e2e_test_scaffolder.py pages/ --include-pom --routes "/login,/dashboard"
 """
 
 import os

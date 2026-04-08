@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Test Suite Generator
+[LEGADO] Test Suite Generator — Python
+
+Este arquivo está depreciado. Use a versão Node.js:
+    node test_suite_generator.mjs src/components/ --output testing/unit/
+    node test_suite_generator.mjs src/ --include-a11y --scan-only
 
 Scans React/TypeScript components and generates Jest + React Testing Library
 test stubs with proper structure, accessibility tests, and common patterns.
-
-Usage:
-    python test_suite_generator.py src/components/ --output testing/unit/
-    python test_suite_generator.py src/ --include-a11y --scan-only
 """
 
 import os
