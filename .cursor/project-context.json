@@ -52,6 +52,11 @@
       "artifacts": {},
       "completedAt": null
     },
+    "code-review": {
+      "status": "pending",
+      "artifacts": {},
+      "completedAt": null
+    },
     "security": {
       "status": "pending",
       "artifacts": {},

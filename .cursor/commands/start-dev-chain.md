@@ -31,9 +31,10 @@ O Agent irá orquestrar automaticamente todos os subagents necessários.
 8. **UI/UX Designer** - Design e mockups (paralelo com Architecture quando fizer sentido)
 9. **Frontend Developer** - Implementação frontend
 10. **Backend Developer** - Implementação backend (paralelo com Frontend; pode consumir artefatos em `data/`)
-11. **Security Engineer** - Revisão de segurança
-12. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
-13. **QA Engineer** - Testes e validação final
+11. **Code Reviewer** - Revisão de código (regressão, segurança, clean code; saídas em `revision/<RUN_ID>/`)
+12. **Security Engineer** - Revisão de segurança
+13. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
+14. **QA Engineer** - Testes e validação final
 
 ## Validação
 

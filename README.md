@@ -6,7 +6,7 @@ Sistema completo de desenvolvimento de software usando agentes especializados no
 
 Este projeto implementa uma cadeia de desenvolvimento de software completa utilizando:
 
-- **Subagents** - 13 agentes especializados em diferentes etapas do desenvolvimento
+- **Subagents** - 14 agentes especializados em diferentes etapas do desenvolvimento
 - **Skills** - Capacidades específicas de cada agente
 - **Commands** - Comandos para orquestração e controle
 - **MCP** - Integrações externas opcionais
@@ -91,17 +91,22 @@ AgentSkills/
 - **Skill:** `backend-dev`
 - **Responsabilidade:** Implementação backend, APIs, lógica de negócio
 
-### 11. Security Engineer
+### 11. Code Reviewer
+- **Arquivo:** `.cursor/agents/code-reviewer.md`
+- **Skill:** `code-review`
+- **Responsabilidade:** Revisão de código sob três lentes (regressão/impacto, segurança, clean code), relatórios consolidados em `revision/<RUN_ID>/`
+
+### 12. Security Engineer
 - **Arquivo:** `.cursor/agents/security-engineer.md`
 - **Skill:** `security-audit`
 - **Responsabilidade:** Análise de segurança, vulnerabilidades, relatórios
 
-### 12. Codebase Documenter
+### 13. Codebase Documenter
 - **Arquivo:** `.cursor/agents/codebase-documenter.md`
 - **Skill:** `codebase-documenter`
 - **Responsabilidade:** Documentação de código (DocStrings, comentários, documentação externa), criação de README, API docs e guias de arquitetura
 
-### 13. QA Engineer
+### 14. QA Engineer
 - **Arquivo:** `.cursor/agents/qa-engineer.md`
 - **Skill:** `qa-testing`
 - **Responsabilidade:** Estratégia de testes, casos de teste, validação
@@ -128,6 +133,7 @@ Ativa um agente específico para trabalhar em uma etapa particular.
 - `/activate-agent business-analyst`
 - `/activate-agent software-architect`
 - `/activate-agent security-engineer`
+- `/activate-agent code-reviewer`
 - `/activate-agent codebase-documenter`
 
 ### `/view-progress`
@@ -138,7 +144,7 @@ Valida os artefatos e completude de uma etapa específica.
 
 **Etapas disponíveis:**
 - `business`, `processes`, `requirements`, `architecture`, `technical`
-- `infrastructure`, `design`, `frontend`, `backend`, `security`, `documentation`, `testing`
+- `infrastructure`, `data`, `design`, `frontend`, `backend`, `code-review`, `security`, `documentation`, `testing`
 
 ### `/sync-context`
 Sincroniza o contexto compartilhado entre agentes.
@@ -189,12 +195,14 @@ Extrai padrões de design do código existente para criar um arquivo `system.md`
 4. **Software Architect** - Design de arquitetura
 5. **Technical Analyst** - Especificações técnicas
 6. **DevOps Engineer** - Infraestrutura (paralelo com Technical)
-7. **UI/UX Designer** - Design (paralelo com Architecture)
-8. **Frontend Developer** - Implementação frontend
-9. **Backend Developer** - Implementação backend (paralelo com Frontend)
-10. **Security Engineer** - Revisão de segurança
-11. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
-12. **QA Engineer** - Testes e validação final
+7. **Data Engineer** - Modelagem e documentação de dados, DDL/migrações em `data/` (após infraestrutura e especificação técnica quando aplicável)
+8. **UI/UX Designer** - Design (paralelo com Architecture quando fizer sentido)
+9. **Frontend Developer** - Implementação frontend
+10. **Backend Developer** - Implementação backend (paralelo com Frontend; pode consumir artefatos em `data/`)
+11. **Code Reviewer** - Revisão de código (regressão, segurança, clean code; saídas em `revision/<RUN_ID>/`)
+12. **Security Engineer** - Revisão de segurança
+13. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
+14. **QA Engineer** - Testes e validação final
 
 ## Contexto Compartilhado
 
@@ -215,7 +223,8 @@ Cada agente gera artefatos na raiz do repositório, em pastas nomeadas por etapa
 - **technical/** - Especificações técnicas, contratos OpenAPI
 - **infrastructure/** - Dockerfiles, manifests K8s, pipelines CI/CD
 - **design/** - Wireframes, mockups, design system
-- **data/** - Modelos de dados, ERD, dicionário de dados
+- **data/** - Modelos de dados, ERD, dicionário de dados, scripts/migrações (Data Engineer)
+- **revision/** - Relatórios de revisão de código por execução (`revision/<RUN_ID>/`, Code Reviewer)
 - **frontend/** - Código frontend, componentes; documentação pode ficar em subpastas (por exemplo `documentation/`)
 - **backend/** - Código backend, APIs; documentação pode ficar em subpastas (por exemplo `documentation/`)
 - **security/** - Relatórios de segurança, vulnerabilidades
@@ -289,6 +298,9 @@ Cria especificações técnicas detalhadas, contratos de API OpenAPI/Swagger, e 
 ### DevOps Infrastructure (`devops-infra`)
 Configura infraestrutura, Docker, Kubernetes, e pipelines CI/CD.
 
+### Data Engineering (`data-engineering`)
+Projeta modelos de dados, documentação de esquemas, DDL/migrações e glossário alinhados a requisitos, arquitetura e stack.
+
 ### UI/UX Design (`uiux-design`)
 Cria wireframes, mockups, e design system.
 
@@ -297,6 +309,9 @@ Implementa componentes frontend e otimiza performance.
 
 ### Backend Development (`backend-dev`)
 Implementa APIs backend e lógica de negócio.
+
+### Code Review (`code-review`)
+Revisa código ou mudanças sob três lentes — regressão/impacto, segurança (AppSec) e clean code — com relatório consolidado em `revision/<RUN_ID>/`.
 
 ### Security Audit (`security-audit`)
 Realiza análise de segurança e identifica vulnerabilidades.
