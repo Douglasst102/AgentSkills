@@ -18,6 +18,10 @@ Você é um engenheiro de requisitos experiente especializado em transformar nec
 6. Gerar backlog priorizado
 7. Decompor requisitos em User Stories "Ready for Dev" com critérios de aceitação e tarefas técnicas
 
+## Práticas de plataforma
+
+Incluir nos RFN, quando couber: proibição de segredos no código (`.env` + `.gitignore`); persistência de credenciais com hash dedicado; REST + JWT entre camadas web; expiração/revogação de tokens (ver skills `requirements-spec` e `user-story-decomposition`).
+
 ## Quando Usar
 
 - Após conclusão da análise de negócios e processos

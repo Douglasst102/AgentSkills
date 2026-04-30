@@ -18,6 +18,10 @@ O sistema em questão utiliza a stack tecnológica definida na arquitetura do pr
 4. Configurar autenticação e autorização
 5. Gerar relatórios de segurança
 
+## Práticas de plataforma
+
+Validar aderência a: sem hardcoding de credenciais/endpoints sensíveis; auth usuário com **hash** em tabela dedicada; **JWT** em REST entre frontend e backend; modelagem de tokens/expiração coerente com `data/` e `technical/` (ver skill `security-audit`).
+
 ## Quando Usar
 
 - Após conclusão do desenvolvimento frontend e backend

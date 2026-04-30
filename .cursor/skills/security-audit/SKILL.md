@@ -15,7 +15,14 @@ Skill para análise completa de segurança e identificação de vulnerabilidades
 - Revisão de autenticação
 - Geração de relatórios de segurança
 
-## Instruções
+## Práticas obrigatórias de plataforma (segurança da aplicação)
+
+Ao auditar ou orientar implementação, **exija conformidade** com:
+
+- **Segredos:** é proibido hardcodar usuários, senhas, configurações sensíveis ou endpoints privados no código; uso de `.env` local (ignorado pelo `.gitignore`) e secrets em CI/produção
+- **Credenciais de usuário:** quando houver login com senha, persistência em **tabela dedicada** no banco; armazenar **apenas hash de senha** (uso de algoritmo adequado para senhas com salt, ex.: bcrypt, Argon2 — não senha em claro nem esquema frágil)
+- **Comunicação frontend ↔ backend:** HTTP/REST com autenticação via **JWT** (ou stack equivalente documentada); validar emissão, validação, armazenamento seguro no cliente e expiração
+- **Modelagem:** qualquer fluxo de auth deve ter **dados de suporte documentados** — usuários, sessões/refresh se existirem, revogação, políticas de expiração de token — alinhados a `data/` e `technical/`
 
 ### 1. Análise de Arquitetura e Código
 
@@ -62,7 +69,8 @@ Skill para análise completa de segurança e identificação de vulnerabilidades
   - Configurações de hardening para cada serviço
 
 **Dados Sensíveis:**
-- Verifique se secrets estão hardcoded
+- Verifique se secrets, URLs internas ou credenciais estão hardcoded (incluindo fallbacks em código)
+- Confirme `.gitignore` cobrindo `.env*` e ausência de commits acidentais
 - Analise uso de variáveis de ambiente
 - Verifique criptografia de dados sensíveis
 - Analise logging de informações sensíveis

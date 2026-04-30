@@ -14,12 +14,15 @@ Orientação para revisar o código sob este ângulo. Escopo **estrito**: ameaç
 
 ## Checklist obrigatório
 
-1. Toda entrada externa passa por **validação explícita** no limite de confiança?
-2. Consultas ao BD são **parametrizadas** / ORM seguro?
-3. Comandos de sistema ou shells são **evitados** ou fortemente encapsulados?
-4. Autorização é verificada **no servidor** por recurso/ação (não só na UI)?
-5. Respostas e logs **não vazam** dados sensíveis ou stack traces em produção?
-6. Há **rate limiting** / proteção onde abre superfície de abuso (login, APIs públicas)?
+1. **Segredos e configuração:** Não há usuários, senhas, tokens de serviço ou URLs privadas hardcoded? Variáveis vêm de `.env`/secret store e `.env*` está no `.gitignore`?
+2. **JWT / REST:** Se o stack usa JWT entre frontend e backend, tokens são validados no servidor, expiração e refresh (se houver) estão corretos e não há segredo de assinatura no cliente?
+3. **Senhas:** Senhas nunca persistidas em claro; apenas hash com algoritmo adequado (bcrypt/Argon2/PBKDF2), em tabela dedicada quando houver auth local?
+4. Toda entrada externa passa por **validação explícita** no limite de confiança?
+5. Consultas ao BD são **parametrizadas** / ORM seguro?
+6. Comandos de sistema ou shells são **evitados** ou fortemente encapsulados?
+7. Autorização é verificada **no servidor** por recurso/ação (não só na UI)?
+8. Respostas e logs **não vazam** dados sensíveis ou stack traces em produção?
+9. Há **rate limiting** / proteção onde abre superfície de abuso (login, APIs públicas)?
 
 ## Comportamento
 

@@ -15,6 +15,13 @@ Skill para criação de especificações técnicas detalhadas e contratos de API
 - Especificação de integrações
 - Casos de uso técnicos
 
+## Práticas de plataforma (contratos e API pública)
+
+- Produzir **OpenAPI** completo e mantê-lo como fonte da verdade para o backend expor **documentação pública** dos métodos (sem embutir secrets nos exemplos)
+- Especificar **CORS** (origens permitidas, credenciais, headers) por ambiente
+- Posicionar o backend como **BFF**: endpoints que servem o frontend, **proxy** para sistemas externos quando necessário, e camadas **Facade** para operações que combinam API externa + banco (uma chamada do cliente)
+- Para cada operação: objetivo claro, assinatura coerente, e texto sobre **idempotência**, transações e consistência esperada (**ACID** onde couber); erros e códigos HTTP documentados
+
 ## Instruções
 
 1. **Especificações Técnicas Detalhadas**
@@ -24,14 +31,15 @@ Skill para criação de especificações técnicas detalhadas e contratos de API
    - Defina estruturas de dados internas
 
 2. **Contratos de API (OpenAPI/Swagger)**
-   - Crie especificação OpenAPI 3.0 para cada API
-   - Documente todos os endpoints
+   - Crie especificação OpenAPI para cada API exposta ao frontend (e padronize publicação: URL do JSON/YAML e UI)
+   - Documente todos os endpoints, inclusive **Facade/BFF** que agregam integrações externas
    - Especifique schemas de request/response
-   - Inclua exemplos e validações
-   - Documente autenticação e autorização
+   - Inclua exemplos e validações (sem segredos reais)
+   - Documente autenticação e autorização (**JWT** Bearer quando for o padrão), escopos e códigos de erro
 
 3. **Modelos de Dados (ERD)**
    - Projete esquema de banco de dados
+   - Inclua **modelagem para autenticação**: tabela dedicada de usuários (hash de senha), e estruturas para refresh tokens / sessão / revogação quando aplicável, com **políticas de expiração** descritas
    - Identifique entidades e relacionamentos
    - Defina constraints e índices
    - Documente normalização
@@ -43,10 +51,11 @@ Skill para criação de especificações técnicas detalhadas e contratos de API
    - Especifique transações e consistência
 
 5. **Especificações de Integração**
-   - Documente integrações entre componentes
+   - Documente integrações entre componentes (frontend → BFF → APIs externas / banco)
    - Especifique protocolos e formatos
    - Documente sincronização e assíncrono
    - Inclua tratamento de falhas
+   - Documente requisitos de **CORS** e limites de taxa se aplicável
 
 ## Outputs
 

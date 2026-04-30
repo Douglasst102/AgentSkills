@@ -28,7 +28,11 @@ Skill para especificação completa de requisitos de software.
 
 2. **Identificação de Requisitos Não-Funcionais**
    - Performance (tempo de resposta, throughput)
-   - Segurança (autenticação, autorização, criptografia)
+   - Segurança (autenticação, autorização, criptografia), incluindo quando aplicável:
+     - Proibição de segredos e endpoints sensíveis no código-fonte; uso de `.env` e `.gitignore`
+     - Autenticação usuário com credenciais em **persistência dedicada** e **somente hash de senha** armazenado
+     - Comunicação frontend–backend em **HTTP/REST com JWT** (ou alternativa documentada)
+     - Modelagem e políticas de **expiração/revogação** de tokens/sessão
    - Escalabilidade (usuários simultâneos, volume de dados)
    - Disponibilidade (uptime, redundância)
    - Usabilidade (acessibilidade, interface)

@@ -16,6 +16,16 @@ Skill para design completo de arquitetura de software.
 - Especificação de APIs
 - Proposta de múltiplas alternativas arquiteturais
 
+## Fronteira web, segurança e BFF
+
+Quando o sistema incluir frontend e backend separados:
+
+- **Segredos:** proibir credenciais e endpoints sensíveis no código-fonte; configuração via `.env` local com `.gitignore` adequado
+- **Autenticação:** usuários com credenciais em **persistência dedicada** (hash de senha apenas); troca entre frontend e backend em **HTTP/REST com JWT** salvo decisão divergente registrada em ADR
+- **Frontend:** não é fonte de verdade para dados de negócio — **não persiste** dados sensíveis/além do acordado (ex.: apenas estado de UI e tokens efêmeros); **só consome** o que o backend expõe
+- **Estratégias de renderização:** para cada página ou rota principal, registrar em SAD ou ADR a escolha (**SSG**, **SSR**, **ISR**, **client-side / SWR**) com justificativa (SEO, dados dinâmicos, personalização, custo de infra)
+- **Backend como BFF:** atende o frontend via APIs próprias; pode **prover proxy** e **Facade** sobre APIs externas e banco — o frontend não orquestra integrações complexas
+
 ## Contexto e Princípios
 
 Antes de iniciar o design arquitetural, consulte `references/orientacoes-arquiteturais.md` para entender os princípios e diretrizes arquiteturais da software house. Os princípios fundamentais são:

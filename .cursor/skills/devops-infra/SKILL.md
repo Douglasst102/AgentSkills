@@ -68,9 +68,10 @@ Para cada serviço/componente da aplicação:
   - Use nomes de serviço como hostnames (ex: `api`, `db`, `cache`, etc.)
 
 - **Variáveis de ambiente:**
-  - Use arquivo `.env` para configurações sensíveis
+  - Use arquivo `.env` local para credenciais, URLs internas, chaves de API e qualquer configuração sensível — **proibido** hardcodar usuários, senhas, endpoints privados ou segredos no código-fonte
+  - Garanta que `.env`, `.env.local` e variantes estejam listados no **`.gitignore`** do repositório (e não versionados)
   - Defina variáveis via `environment` ou `env_file`
-  - Nunca commite senhas ou secrets reais
+  - Nunca commite senhas ou secrets reais; em CI/CD use secrets do provedor (GitHub Actions, Vault, etc.), nunca valores literais no YAML pipeline
 
 - **Volumes persistentes:**
   - Configure volumes nomeados para dados persistentes (bancos de dados, cache, etc.)
@@ -121,7 +122,13 @@ Para cada serviço/componente da aplicação:
 
 **Consulte `references/docker-best-practices.md` para mais detalhes.**
 
-### 4. .env.example
+### 4. Política de segredos e `.gitignore`
+
+- Todo valor sensível vem de ambiente ou secret store — não de constantes no código
+- O repositório deve incluir `.gitignore` explícito para `.env*` (exceto `.env.example`), arquivos de credencial e caches locais
+- Revise pipelines e manifests para não embutir tokens; use referências a secrets nomeados
+
+### 5. .env.example
 
 **Template de variáveis de ambiente:**
 - Crie arquivo `.env.example` com todas as variáveis necessárias
@@ -147,27 +154,30 @@ DB_PASSWORD=your_password_here
 EXTERNAL_API_KEY=your_api_key_here
 ```
 
-### 5. Kubernetes Manifests
+### 6. Kubernetes Manifests
    - Crie Deployment para cada serviço
    - Configure Services (ClusterIP, LoadBalancer)
    - Configure ConfigMaps e Secrets
    - Defina Ingress para exposição externa
    - Configure Resource Limits e Requests
 
-4. **Pipelines CI/CD**
+### 7. Pipelines CI/CD
+
    - Configure pipeline de build
    - Configure testes automatizados
    - Configure deploy para staging
    - Configure deploy para produção
    - Inclua rollback automático
 
-5. **Infraestrutura como Código**
+### 8. Infraestrutura como Código
+
    - Use Terraform ou CloudFormation
    - Defina recursos de cloud (se aplicável)
    - Configure networking e segurança
    - Documente variáveis e outputs
 
-6. **Configuração de Ambientes**
+### 9. Configuração de Ambientes
+
    - Defina variáveis por ambiente
    - Configure secrets management
    - Documente diferenças entre ambientes
@@ -190,6 +200,7 @@ Antes de concluir, valide:
 - [ ] docker-compose.dev.yml configurado com bind mounts e hot reload
 - [ ] docker-compose.prod.yml configurado com builds otimizados
 - [ ] .dockerignore criado para cada componente
+- [ ] `.gitignore` ignora `.env` e arquivos sensíveis; nenhum secret no código ou pipeline
 - [ ] .env.example criado com todas as variáveis necessárias
 - [ ] Volumes persistentes configurados para dados
 - [ ] Healthchecks configurados quando apropriado

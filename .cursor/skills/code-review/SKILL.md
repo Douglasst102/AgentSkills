@@ -5,6 +5,16 @@ description: Revisa código ou mudanças sob três lentes — regressão/impacto
 
 # Revisão de código (três lentes + consolidação)
 
+## Práticas de plataforma (lentes regressão / segurança / clean code)
+
+Verifique também:
+
+- Ausência de segredos, senhas e endpoints sensíveis hardcoded; uso de `.env` + `.gitignore`
+- Autenticação JWT em REST entre frontend e backend (quando aplicável) e hashing de senha apenas no backend/tabela dedicada
+- Backend como única fonte de verdade para dados sensíveis; frontend sem persistência de negócio fora do combinado em arquitetura
+
+Detalhes na lente de segurança: `references/seguranca.md`.
+
 ## Antes de começar
 
 1. **`RUN_ID`**: se o usuário não informar, gere `YYYY-MM-DD-HHmm` (sem espaços), ex.: `2026-04-29-1430`.

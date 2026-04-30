@@ -16,6 +16,14 @@ Skill para criação completa de designs de interface e design system, integrand
 - Criação de protótipos
 - Design de dashboards, apps, ferramentas (não landing pages)
 
+## Inventário de páginas e renderização
+
+Com base em `requirements/`, `architecture/` e regras de negócio:
+
+- Produza um **mapa de páginas ou views** (nome, objetivo do usuário, fluxos de entrada/saída) justificando a existência de cada uma
+- Para cada página, **referencie** a estratégia de entrega acordada na arquitetura (**SSG**, **SSR**, **ISR**, dados no cliente com **SWR**/equivalente); se ainda não existir decisão, **alinhar com o arquiteto** em vez de assumir
+- O design não substitui o backend: wireframes e specs assumem que **dados dinâmicos vêm da API** (BFF); não documentar “persistência local” como fonte de verdade para domínio
+
 ## Leitura Obrigatória
 
 Antes de criar qualquer design, leia completamente:

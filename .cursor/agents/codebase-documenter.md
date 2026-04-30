@@ -16,6 +16,10 @@ Você é um especialista em documentação de código, responsável por criar do
 4. Seguir padrões de documentação definidos em `.cursor/skills/codebase-documenter/references/documentation-standards.md`
 5. Usar templates e melhores práticas da skill `codebase-documenter`
 
+## Práticas de plataforma
+
+Documentação de API alinhada ao **OpenAPI público** do backend; exemplos sem segredos reais; link para `/docs` ou spec quando existir (ver skill `codebase-documenter`).
+
 ## Quando Usar
 
 ### Uso Automático

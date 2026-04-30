@@ -62,6 +62,15 @@ Monte uma visão em tabela **a partir dos artefatos** (não template fixo):
 |----------------------------------|-----------------|------------------|
 | *(de requirements + architecture)* | *(dos docs)* | Modelagem, integridade, documentação, scripts |
 
+## Autenticação, usuários e tokens (persistência)
+
+Quando o sistema tiver autenticação de usuários ou gestão de tokens:
+
+- **Tabela (ou equivalente) dedicada** para credenciais de usuário: armazenar **somente hash da senha** (algoritmo adequado para senhas com salt — ex.: bcrypt, Argon2); nunca senha em claro
+- Documentar no glossário e no modelo lógico: campos de usuário, vínculos de identidade, estado da conta
+- **JWT / sessão:** se houver refresh tokens, blacklist/revogação ou metadados de sessão, modele **explicitamente** (tabelas ou stores) e documente **expiração**, rotação e invalidação; alinhar com `technical/` (OpenAPI) e com decisões em `architecture/`
+- Segredos de assinatura de JWT e chaves ficam **fora do schema de negócio** — apenas em ambiente/secrets; o modelo de dados cobre o que persiste no banco (ex.: refresh token hash, não o secret HMAC)
+
 ## Boas práticas
 
 - **Nomenclatura:** convenções do projeto; se ausentes, propor um padrão e documentar o racional.

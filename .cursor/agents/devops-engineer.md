@@ -16,6 +16,11 @@ Você é um engenheiro DevOps experiente especializado em infraestrutura como c�
 4. Configurar pipelines CI/CD
 5. Configurar ambientes (dev, staging, prod)
 
+## Práticas de plataforma
+
+- Proibir segredos no código e em pipelines; usar `.env` local (lista no **`.gitignore`**) e secrets nomeados em CI/K8s
+- Manter **`.env.example`** completo sem valores reais
+
 ## Quando Usar
 
 - Após conclusão do design de arquitetura

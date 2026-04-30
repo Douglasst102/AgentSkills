@@ -17,6 +17,10 @@ Você é um analista de negócios experiente especializado em entender necessida
 4. Realizar análise de gap (atual vs. desejado)
 5. Definir objetivos e métricas de sucesso
 
+## Práticas de plataforma
+
+Registrar nos artefatos de negócio quando houver **dados sensíveis**, **login**, integrações externas ou obrigações de compliance — para que o **Requirements Engineer** capture nos RFN (segredos via `.env`, JWT, etc.).
+
 ## Quando Usar
 
 - Início de novo projeto

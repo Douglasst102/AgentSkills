@@ -15,6 +15,13 @@ Skill para desenvolvimento completo de aplicações frontend modernas.
 - Otimização de performance
 - Criação de testes frontend
 
+## Práticas de plataforma (dados e API)
+
+- **Sem persistência de negócio no cliente:** não usar `localStorage`/IndexedDB ou bases locais para dados de domínio **salvo** quando a arquitetura documentar exceção explícita; estado volátil de UI e cache de leitura curta podem existir, mas a fonte autoritativa é sempre o **backend**
+- **Sem segredos:** nenhuma senha de serviço, chave de API privada ou URL interna hardcoded; usar variáveis de ambiente públicas (`NEXT_PUBLIC_*`, `VITE_*`, etc.) apenas para o que for seguro expor ao browser
+- **Integração:** toda informação dinâmica vem do backend (REST + **JWT** quando auth existir); não acessar APIs externas privadas diretamente do browser se o contrato do projeto exige passagem pelo BFF
+- **Páginas e renderização:** implementar conforme decisões em `architecture/` (**SSG**, **SSR**, **ISR**, fetch client-side com **SWR**/React Query/etc.) — registrar divergências com o arquiteto
+
 ## Instruções
 
 1. **Configuração do Projeto**
@@ -32,7 +39,7 @@ Skill para desenvolvimento completo de aplicações frontend modernas.
 3. **Gerenciamento de Estado**
    - Configure solução de estado (Redux, Zustand, Context API)
    - Implemente actions e reducers
-   - Configure persistência quando necessário
+   - Evite persistência local de dados de negócio; se usar persistência de estado (ex.: Redux Persist), restrinja a preferências de UI ou fluxos explicitamente aprovados na arquitetura — **não** armazenar segredos nem substituir o backend como fonte de verdade
 
 4. **Integração com APIs**
    - Configure cliente HTTP (Axios, Fetch)

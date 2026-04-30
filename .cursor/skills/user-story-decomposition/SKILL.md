@@ -29,6 +29,8 @@ Se houver qualquer ambiguidade, inconsistência ou informação faltante, **faç
 
 ### 2. Identificação de User Stories
 
+Alinhe histórias à arquitetura de interface e API: quando houver app web, relacionar entregas a **páginas ou rotas** e à estratégia de renderização definida em `architecture/` (**SSG**, **SSR**, **ISR**, dados via **SWR**/client). Tarefas de backend devem preferir **BFF/Facade** quando a UI precisar agregar múltiplas fontes.
+
 Com base nos requisitos, identifique as User Stories principais que entregam valor ao usuário:
 - Evite histórias muito grandes (Epics)
 - Se identificar um Epic, sugira sua quebra em histórias menores
@@ -73,19 +75,22 @@ Liste todos os critérios que definem que a história está "pronta" e funcionan
 Com base na arquitetura fornecida, sugira uma lista de tarefas técnicas necessárias para implementar a história. Separe por área de atuação:
 
 - **Backend:**
-  - Criar endpoints necessários
+  - Criar endpoints necessários (incluir **Facade/BFF** quando a UI exigir agregar APIs externas + dados locais)
   - Implementar lógica de negócio
-  - Configurar autenticação/autorização
+  - Configurar autenticação/autorização (**JWT** em REST quando for o padrão do projeto)
   - Implementar validações
+  - Garantir contrato **OpenAPI** e **CORS** conforme `technical/`
 
 - **Frontend:**
   - Criar componentes de interface
-  - Implementar chamadas à API
+  - Implementar chamadas à API (somente backend/BFF; sem persistir dados de negócio localmente salvo exceção arquitetural)
   - Gerenciar estado e navegação
   - Implementar validações de formulário
+  - Aplicar modo de renderização por página conforme ADR/arquitetura (SSG/SSR/ISR/client)
 
 - **Banco de Dados:**
   - Verificar/criar estruturas de dados
+  - Para auth local: **tabela dedicada** de usuários com **somente hash de senha**; demais metadados de token conforme `data/`
   - Criar migrações se necessário
   - Definir índices e constraints
 

@@ -17,6 +17,10 @@ Você é um analista técnico experiente especializado em criar especificações
 4. Especificar casos de uso técnicos
 5. Documentar integrações entre componentes
 
+## Práticas de plataforma
+
+OpenAPI **público** e alinhado à implementação; **CORS** documentado; backend como **BFF** com **Facade** para agregar APIs externas + banco; contratos descrevendo **idempotência** e consistência onde aplicável; modelo de dados incluindo **auth** e políticas de token (ver skill `technical-spec`).
+
 ## Quando Usar
 
 - Após conclusão do design de arquitetura
@@ -48,8 +52,9 @@ Você é um analista técnico experiente especializado em criar especificações
 
 Antes de concluir, verifique:
 - [ ] Especificações técnicas completas
-- [ ] Contratos de API criados (OpenAPI/Swagger)
-- [ ] Modelos de dados projetados
+- [ ] Contratos de API criados (OpenAPI/Swagger) com caminho de **documentação pública** definido
+- [ ] **CORS** e papel **BFF/Facade** descritos onde aplicável
+- [ ] Modelos de dados projetados (incl. **auth**/tokens se existirem)
 - [ ] Casos de uso técnicos especificados
 - [ ] Integrações documentadas
 - [ ] Contexto salvo corretamente

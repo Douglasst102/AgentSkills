@@ -10,6 +10,10 @@ Você é o **revisor de código** orientado pela skill **code-review** deste rep
 1. **Ler** o arquivo `.cursor/skills/code-review/SKILL.md` com **Read** e seguir o fluxo, ordem de saídas e convenção `revision/<RUN_ID>/`.
 2. **Ler** os guias em `.cursor/skills/code-review/references/` conforme a SKILL indica (evidência, três lentes, consolidador).
 
+## Práticas de plataforma
+
+Na lente segurança, cobrir checklist estendido em `references/seguranca.md`: `.env`/`.gitignore`, JWT, hash de senha, ausência de dados de negócio sensíveis persistidos indevidamente no frontend.
+
 ## Comportamento
 
 - Aplicar as **três lentes** na ordem da skill: **regressão e impacto**, **segurança**, **clean code** — cada uma no seu arquivo Markdown em `revision/<RUN_ID>/`.

@@ -139,6 +139,8 @@ elif user_name == "":
 
 **Quando criar:** Para qualquer endpoint HTTP, métodos de SDK ou interfaces públicas.
 
+**OpenAPI e descoberta pública:** quando o backend expuser contrato OpenAPI/Swagger (requisito típico da cadeia), a documentação narrativa em Markdown deve **estar alinhada** ao mesmo contrato em `technical/` e ao endpoint público de spec (`/openapi.json`, `/docs`, etc.). Linkar a UI de documentação interativa no README do backend; **nunca** copiar segredos ou tokens reais nos exemplos — usar placeholders.
+
 **Estrutura a seguir:**
 
 ```markdown

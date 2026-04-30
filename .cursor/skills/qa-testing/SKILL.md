@@ -20,6 +20,10 @@ Skill para geração e execução incremental de testes por User Story, com suí
 - **Código entregue:** caminhos dos arquivos alterados em `frontend/`, `backend/`, etc.
 - **Suíte existente:** testes já presentes em `testing/unit/`, `testing/integration/` e `testing/e2e/` de stories anteriores.
 
+## Práticas de plataforma
+
+Não commitar segredos em fixtures ou configs de teste; usar variáveis de ambiente de exemplo ou mocks. Fluxos **JWT**/login devem seguir contratos em `technical/` e decisões em `architecture/`. E2E contra BFF/backend conforme URLs definidas no projeto.
+
 ## Ferramentas por nível — distinção obrigatória
 
 | Nível | Ferramenta | Localização |

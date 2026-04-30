@@ -34,6 +34,15 @@ Antes de iniciar o desenvolvimento:
    - Para cada item: descrição, estimativa de esforço e link para código/arquivo
    - Aguardar confirmação antes de prosseguir com a implementação
 
+## Práticas de plataforma (API, segurança, BFF)
+
+- **Segredos:** nunca hardcodar usuários, senhas, URLs privadas de APIs ou chaves; usar variáveis de ambiente (`.env` local ignorado pelo Git) e secrets em deploy
+- **OpenAPI:** expor documentação pública dos métodos da API (OpenAPI/Swagger ou equivalente) alinhada ao contrato em `technical/`
+- **CORS:** configurar explicitamente origens, métodos e headers permitidos conforme ambiente; não usar `*` em produção com credenciais
+- **Papel BFF:** o backend atende o frontend (REST): dados próprios, **proxy** para APIs externas quando necessário, e **composição** de múltiplas fontes — usar **Facade** (serviços agregadores) para esconder do frontend chamadas múltiplas ou regras de junção com banco
+- **Qualidade de API:** endpoints coerentes com desacoplamento, transações onde fizer sentido (**atomicidade**, **consistência**, **isolamento**), e documentar **idempotência** (ex.: chaves de idempotência em POST críticos) quando aplicável
+- **Auth:** comunicação HTTP/REST com o frontend autenticada via **JWT** (quando for o padrão do projeto); credenciais de usuário em **tabela dedicada** com **apenas hash de senha** no armazenamento
+
 ## Instruções
 
 1. **Planejamento**
@@ -47,10 +56,10 @@ Antes de iniciar o desenvolvimento:
    - Configure testes
 
 2. **Implementação de APIs**
-   - Implemente endpoints conforme OpenAPI
+   - Implemente endpoints conforme OpenAPI e mantenha o artefato **acessível publicamente** (rota `/docs`, `/openapi.json` ou hospedagem equivalente), sem expor segredos
    - Configure validação de entrada
    - Implemente tratamento de erros
-   - Configure documentação (Swagger)
+   - Configure documentação interativa (Swagger UI ou similar) espelhando o contrato versionado
 
 3. **Lógica de Negócio**
    - Implemente services/business logic
@@ -65,13 +74,14 @@ Antes de iniciar o desenvolvimento:
    - Implemente queries otimizadas
 
 5. **Autenticação e Autorização**
-   - Implemente JWT ou OAuth
+   - Implemente JWT (padrão REST com frontend) ou OAuth quando a arquitetura exigir
+   - Persistência de usuários em **tabela dedicada**; senha apenas como **hash** (bcrypt/Argon2/PBKDF2); documentar política de refresh/expiração alinhada a `data/` e `technical/`
    - Configure middleware de autenticação
    - Implemente controle de acesso (RBAC)
-   - Configure refresh tokens
+   - Configure refresh tokens e invalidação conforme especificação
 
 6. **Integrações**
-   - Implemente clientes HTTP para APIs externas
+   - Implemente clientes HTTP para APIs externas; quando o frontend precisar apenas de dados agregados, encapsule atrás de **Facade** no backend (não exponha a complexidade ao cliente)
    - Configure retry e circuit breaker
    - Implemente tratamento de erros de integração
 

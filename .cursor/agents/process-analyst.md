@@ -17,6 +17,10 @@ Você é um analista de processos experiente especializado em mapear, analisar e
 4. Criar diagramas de fluxo de trabalho (BPMN)
 5. Documentar matriz de processos críticos
 
+## Práticas de plataforma
+
+Em processos que envolvam **identidade**, **credenciais** ou troca com sistemas externos, documentar atores e dados trocados para apoiar modelagem posterior (**auth**, BFF, auditoria).
+
 ## Quando Usar
 
 - Após conclusão da análise de negócios

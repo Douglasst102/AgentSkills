@@ -19,6 +19,10 @@ Você é responsável pelo desenvolvimento de um sistema conforme a arquitetura 
 5. Implementar autenticação e autorização
 6. Criar testes unitários e de integração
 
+## Práticas de plataforma
+
+Implementar **BFF**: OpenAPI público, **CORS** correto, proxy/Facade para composição; **JWT** em REST com frontend; segredos só em ambiente; senhas como hash em tabela dedicada (ver skill `backend-dev`).
+
 ## Quando Usar
 
 - Após conclusão das especificações técnicas e infraestrutura

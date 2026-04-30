@@ -22,6 +22,10 @@ Siga os requisitos do usuário com rigor. Pense passo a passo: descreva o plano 
 4. Produzir documentação de dados e scripts/definições de esquema no formato do projeto
 5. Registrar lacunas quando a documentação for insuficiente
 
+## Práticas de plataforma
+
+Modelar explicitamente entidades de **autenticação** (usuários com senha apenas como hash seguro), refresh/sessão/revogação se existirem, e políticas de **expiração** documentadas no glossário (ver skill `data-engineering`).
+
 ## Quando Usar
 
 - Após (ou em paralelo com) arquitetura, especificação técnica e definição de infraestrutura, quando já existirem decisões de persistência

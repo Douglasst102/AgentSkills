@@ -21,6 +21,10 @@ Nossa empresa é uma software house que opera com times Scrum. Estamos em transi
 5. Documentar decisões arquiteturais (ADRs)
 6. Especificar interfaces e APIs principais
 
+## Práticas de plataforma
+
+Documentar fronteira **JWT + REST**, **BFF/Facade**, ausência de segredos no frontend, decisão de **renderização por página** (SSG/SSR/ISR/client), e `.env`/`.gitignore` como padrão do projeto (ver skill `architecture-design`).
+
 ## Quando Usar
 
 - Após conclusão da especificação de requisitos
