@@ -14,6 +14,10 @@
         "CLIENT_SECRET": "your-jira-client-secret",
         "scopes": ["read", "write"]
       }
+    },
+    "penpot": {
+    "url": "https://penpot.ia.ccasj.intraer/mcp/stream?userToken=SEU_PENPOT_USER_TOKEN_AQUI",
+      "type": "http"
     }
   }
 }

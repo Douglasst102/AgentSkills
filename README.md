@@ -8,7 +8,6 @@ Este projeto implementa uma cadeia de desenvolvimento de software completa utili
 
 - **Subagents** - 14 agentes especializados em diferentes etapas do desenvolvimento
 - **Skills** - Capacidades específicas de cada agente
-- **Commands** - Comandos para orquestração e controle
 - **MCP** - Integrações externas opcionais
 
 ## Estrutura do Projeto
@@ -18,7 +17,6 @@ AgentSkills/
 ├── .cursor/
 │   ├── agents/              # Subagents especializados
 │   ├── skills/            # Skills por domínio
-│   ├── commands/          # Commands de orquestração
 │   ├── project-context.json  # Contexto compartilhado
 │   └── mcp.json          # Configuração MCP (opcional)
 ├── business/              # Análise de negócios
@@ -111,82 +109,6 @@ AgentSkills/
 - **Skill:** `qa-testing`
 - **Responsabilidade:** Estratégia de testes, casos de teste, validação
 
-## Commands Disponíveis
-
-### `/start-dev-chain`
-Inicia a cadeia completa de desenvolvimento, orquestrando todos os agentes na sequência correta.
-
-**Uso:**
-```
-/start-dev-chain
-```
-
-Forneça:
-- Nome do projeto
-- Descrição inicial do cliente
-- Objetivos principais
-
-### `/activate-agent <nome-do-agente>`
-Ativa um agente específico para trabalhar em uma etapa particular.
-
-**Exemplos:**
-- `/activate-agent business-analyst`
-- `/activate-agent software-architect`
-- `/activate-agent security-engineer`
-- `/activate-agent code-reviewer`
-- `/activate-agent codebase-documenter`
-
-### `/view-progress`
-Exibe o status atual de todas as etapas da cadeia de desenvolvimento.
-
-### `/validate-stage <nome-da-etapa>`
-Valida os artefatos e completude de uma etapa específica.
-
-**Etapas disponíveis:**
-- `business`, `processes`, `requirements`, `architecture`, `technical`
-- `infrastructure`, `data`, `design`, `frontend`, `backend`, `code-review`, `security`, `documentation`, `testing`
-
-### `/sync-context`
-Sincroniza o contexto compartilhado entre agentes.
-
-### Comandos de Interface Design
-
-O skill `uiux-design` integra os comandos do `interface-design`:
-
-#### `/interface-design:init`
-Inicia o processo de design de interface com princípios de craft e consistência.
-
-**Uso:**
-```
-/interface-design:init
-```
-
-#### `/interface-design:status`
-Mostra o estado atual do design system, incluindo direção, tokens e padrões.
-
-**Uso:**
-```
-/interface-design:status
-```
-
-#### `/interface-design:audit <caminho>`
-Verifica código existente contra o design system para violações de espaçamento, profundidade, cor e padrões.
-
-**Uso:**
-```
-/interface-design:audit <caminho>     # Audita arquivo/diretório específico
-/interface-design:audit                # Audita caminhos UI comuns
-```
-
-#### `/interface-design:extract <caminho>`
-Extrai padrões de design do código existente para criar um arquivo `system.md`.
-
-**Uso:**
-```
-/interface-design:extract              # Extrai de caminhos UI comuns
-/interface-design:extract <caminho>   # Extrai de diretório específico
-```
-
 ## Fluxo de Execução
 
 1. **Business Analyst** - Análise de negócios
@@ -239,29 +161,6 @@ O arquivo `.cursor/mcp.json` permite configurar integrações externas opcionais
 - **Jira** - Para gerenciamento de projetos
 
 Configure as credenciais necessárias no arquivo.
-
-## Como Usar
-
-1. **Iniciar um novo projeto:**
-   ```
-   /start-dev-chain
-   ```
-   Forneça as informações iniciais do projeto.
-
-2. **Ativar um agente específico:**
-   ```
-   /activate-agent business-analyst
-   ```
-
-3. **Verificar progresso:**
-   ```
-   /view-progress
-   ```
-
-4. **Validar uma etapa:**
-   ```
-   /validate-stage requirements
-   ```
 
 ## Dependências Entre Etapas
 
@@ -326,11 +225,10 @@ Cria estratégia de testes, casos de teste, e valida qualidade.
 
 - Cada skill possui referências em `references/` com templates e guias
 - Cada subagent documenta seu processo de trabalho e artefatos gerados
-- Os commands explicam seu uso e funcionalidades
 
 ## Contribuindo
 
-Para adicionar novos agentes, skills ou commands:
+Para adicionar novos agentes ou skills ou commands:
 
 1. Crie o subagent em `.cursor/agents/`
 2. Crie a skill correspondente em `.cursor/skills/`

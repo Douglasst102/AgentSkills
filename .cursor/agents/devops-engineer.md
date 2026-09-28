@@ -66,6 +66,8 @@ Para cada serviço/componente:
 
 ### 4. Criação de Docker Compose
 
+Salve `docker-compose.*.yml`, `.env.example`, Dockerfiles e `.dockerignore` na **raiz do projeto** (não em `infrastructure/`).
+
 **Ambiente de Desenvolvimento (docker-compose.dev.yml):**
 
 - [ ] Configure bind mounts para hot reload
@@ -126,18 +128,22 @@ Para cada serviço/componente:
 
 ### 10. Salvamento de Artefatos
 
-Salve os seguintes arquivos em `infrastructure/`:
+**Na raiz do projeto** (docker-compose e dependências diretas):
 
-- [ ] `dockerfiles/` - Dockerfiles para cada serviço
 - [ ] `docker-compose.dev.yml` - Configuração para desenvolvimento
 - [ ] `docker-compose.prod.yml` - Configuração para produção
-- [ ] `.dockerignore` - Para cada componente
 - [ ] `.env.example` - Template de variáveis de ambiente
+- [ ] `dockerfiles/` - Dockerfiles para cada serviço (ou `Dockerfile` / `.dockerignore` ao lado de cada componente referenciado pelo compose)
+- [ ] `.dockerignore` - Para cada componente
+
+**Em `infrastructure/`** (orquestração, IaC e documentação):
+
 - [ ] `kubernetes/` - Manifests Kubernetes
 - [ ] `ci-cd/` - Pipelines CI/CD
-- [ ] `infrastructure/` - Scripts de infraestrutura (Terraform/CloudFormation)
+- [ ] `iac/` - Scripts de infraestrutura (Terraform/CloudFormation)
 - [ ] `environments/` - Configurações de ambientes
 - [ ] `README.md` - Instruções de uso (dev e prod)
+- [ ] `documentation/` - Documentação adicional de infraestrutura
 
 ### 11. Atualização de Contexto
 
@@ -168,16 +174,20 @@ Após concluir a configuração de infraestrutura e validação:
 
 ## Artefatos Gerados
 
-- `dockerfiles/` - Dockerfiles para cada serviço (com multi-stage builds)
+**Raiz do projeto:**
 - `docker-compose.dev.yml` - Configuração para ambiente de desenvolvimento
 - `docker-compose.prod.yml` - Configuração para ambiente de produção
-- `.dockerignore` - Para cada componente (otimizado)
 - `.env.example` - Template de variáveis de ambiente (sem secrets)
+- `dockerfiles/` - Dockerfiles para cada serviço (com multi-stage builds), ou Dockerfiles por componente
+- `.dockerignore` - Para cada componente (otimizado)
+
+**Em `infrastructure/`:**
 - `kubernetes/` - Manifests Kubernetes
 - `ci-cd/` - Pipelines CI/CD
-- `infrastructure/` - Scripts de infraestrutura (Terraform/CloudFormation)
+- `iac/` - Scripts de infraestrutura (Terraform/CloudFormation)
 - `environments/` - Configurações de ambientes
 - `README.md` - Instruções de uso para dev e prod
+- `documentation/` - Documentação adicional
 
 ## Validação
 
@@ -194,9 +204,9 @@ Antes de concluir, verifique:
 - [ ] Manifests Kubernetes criados
 - [ ] Pipelines CI/CD configurados
 - [ ] Ambientes definidos
-- [ ] Documentação de uso criada (README.md)
+- [ ] Documentação de uso criada (`infrastructure/README.md`)
 - [ ] Contexto salvo corretamente
-- [ ] Todos os artefatos salvos em `infrastructure/`
+- [ ] Compose e dependências na raiz; demais artefatos e docs em `infrastructure/`
 
 **Consulte `references/docker-best-practices.md` para checklist completo de boas práticas.**
 
