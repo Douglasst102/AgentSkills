@@ -68,26 +68,26 @@ AgentSkills/
 - **Skill:** `devops-infra`
 - **Responsabilidade:** Infraestrutura, Docker, Kubernetes, CI/CD
 
-### 7. Data Engineer
-- **Arquivo:** `.cursor/agents/data-engineer.md`
-- **Skill:** `data-engineering`
-- **Responsabilidade:** Modelagem conceitual/lógica, documentação de dados, DDL/migrações e glossário ancorados em requisitos, arquitetura e stack
-
-### 8. UI/UX Designer
+### 7. UI/UX Designer
 - **Arquivo:** `.cursor/agents/uiux-designer.md`
 - **Skill:** `uiux-design` (integra `interface-design`)
 - **Responsabilidade:** Wireframes, mockups, design system
 - **Comandos:** `/interface-design:init`, `/interface-design:status`, `/interface-design:audit`, `/interface-design:extract`
 
-### 9. Frontend Developer
-- **Arquivo:** `.cursor/agents/frontend-developer.md`
-- **Skill:** `frontend-dev`
-- **Responsabilidade:** Implementação frontend, componentes, performance
+### 8. Data Engineer
+- **Arquivo:** `.cursor/agents/data-engineer.md`
+- **Skill:** `data-engineering`
+- **Responsabilidade:** Modelagem conceitual/lógica, documentação de dados, DDL/migrações e glossário ancorados em requisitos, arquitetura e stack
 
-### 10. Backend Developer
+### 9. Backend Developer
 - **Arquivo:** `.cursor/agents/backend-developer.md`
 - **Skill:** `backend-dev`
-- **Responsabilidade:** Implementação backend, APIs, lógica de negócio
+- **Responsabilidade:** Implementação backend, APIs, lógica de negócio — uma User Story por vez
+
+### 10. Frontend Developer
+- **Arquivo:** `.cursor/agents/frontend-developer.md`
+- **Skill:** `frontend-dev`
+- **Responsabilidade:** Implementação frontend, componentes, performance — a mesma User Story, após o backend
 
 ### 11. Code Reviewer
 - **Arquivo:** `.cursor/agents/code-reviewer.md`
@@ -99,32 +99,35 @@ AgentSkills/
 - **Skill:** `security-audit`
 - **Responsabilidade:** Análise de segurança, vulnerabilidades, relatórios
 
-### 13. Codebase Documenter
-- **Arquivo:** `.cursor/agents/codebase-documenter.md`
-- **Skill:** `codebase-documenter`
-- **Responsabilidade:** Documentação de código (DocStrings, comentários, documentação externa), criação de README, API docs e guias de arquitetura
-
-### 14. QA Engineer
+### 13. QA Engineer
 - **Arquivo:** `.cursor/agents/qa-engineer.md`
 - **Skill:** `qa-testing`
 - **Responsabilidade:** Estratégia de testes, casos de teste, validação
+
+### 14. Codebase Documenter
+- **Arquivo:** `.cursor/agents/codebase-documenter.md`
+- **Skill:** `codebase-documenter`
+- **Responsabilidade:** Documentação de código (DocStrings, comentários, documentação externa), criação de README, API docs e guias de arquitetura
 
 ## Fluxo de Execução
 
 1. **Business Analyst** - Análise de negócios
 2. **Process Analyst** - Mapeamento de processos
-3. **Requirements Engineer** - Especificação de requisitos e criação de User Stories "Ready for Dev"
+3. **Requirements Engineer** - SRS, backlog e User Stories "Ready for Dev"
 4. **Software Architect** - Design de arquitetura
 5. **Technical Analyst** - Especificações técnicas
-6. **DevOps Engineer** - Infraestrutura (paralelo com Technical)
-7. **Data Engineer** - Modelagem e documentação de dados, DDL/migrações em `data/` (após infraestrutura e especificação técnica quando aplicável)
-8. **UI/UX Designer** - Design (paralelo com Architecture quando fizer sentido)
-9. **Frontend Developer** - Implementação frontend
-10. **Backend Developer** - Implementação backend (paralelo com Frontend; pode consumir artefatos em `data/`)
-11. **Code Reviewer** - Revisão de código (regressão, segurança, clean code; saídas em `revision/<RUN_ID>/`)
-12. **Security Engineer** - Revisão de segurança
-13. **Codebase Documenter** - Documentação de código (após Frontend, Backend, DevOps, UI/UX e Security)
-14. **QA Engineer** - Testes e validação final
+6. **DevOps Engineer** - Infraestrutura
+7. **UI/UX Designer** - Design
+8. **Data Engineer** - Modelagem e documentação de dados, DDL/migrações em `data/`
+
+A partir daí, **para cada User Story**, nesta ordem:
+
+9. **Backend Developer** - Implementação backend da história
+10. **Frontend Developer** - Implementação frontend da mesma história
+11. **Code Reviewer** - Revisão (regressão, segurança, clean code; saídas em `revision/<RUN_ID>/`)
+12. **Security Engineer** - Revisão de segurança da história
+13. **QA Engineer** - Testes e validação da história
+14. **Codebase Documenter** - Documentação do que foi entregue na história
 
 ## Contexto Compartilhado
 
