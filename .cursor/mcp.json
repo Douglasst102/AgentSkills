@@ -16,7 +16,7 @@
       }
     },
     "penpot": {
-    "url": "https://penpot.ia.ccasj.intraer/mcp/stream?userToken=SEU_PENPOT_USER_TOKEN_AQUI",
+    "url": "https://SEU_PENPOT_ADDRESS/mcp/stream?userToken=SEU_PENPOT_USER_TOKEN_AQUI",
       "type": "http"
     }
   }
